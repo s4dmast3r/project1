@@ -1,0 +1,145 @@
+clase,tipo,direccion,termino,coeficiente
+negativo,unigrama,positivo,pero,4.038512351314727
+negativo,unigrama,positivo,muy,3.1314962257266763
+negativo,unigrama,positivo,resultó,3.1131028709202577
+negativo,unigrama,positivo,mal,3.09033294614805
+negativo,unigrama,positivo,harto,2.9424628356237896
+negativo,unigrama,positivo,regalado,2.9230965571628476
+negativo,unigrama,positivo,nadie,2.5943932938948104
+negativo,unigrama,positivo,terrible,2.478521067943063
+negativo,unigrama,positivo,ordinaria,2.403040378961641
+negativo,unigrama,positivo,pobre,2.317151873353516
+negativo,unigrama,positivo,inconsistente,2.2881937682076483
+negativo,unigrama,positivo,decepcionó,2.272828297660995
+negativo,unigrama,negativo,feliz,-1.9303781319884996
+negativo,unigrama,negativo,superó,-1.8186307496762324
+negativo,unigrama,negativo,solo,-1.7778840306278847
+negativo,unigrama,negativo,agradable,-1.743055801880888
+negativo,unigrama,negativo,trae,-1.7361326545548446
+negativo,unigrama,negativo,todavia,-1.7180316601933394
+negativo,unigrama,negativo,mucho,-1.66986362530794
+negativo,unigrama,negativo,caja,-1.6491196158108195
+negativo,unigrama,negativo,durable,-1.6484815225039657
+negativo,unigrama,negativo,viene,-1.6294844393302015
+negativo,unigrama,negativo,supero,-1.6157342431679051
+negativo,unigrama,negativo,igual,-1.6134518775714661
+negativo,bigrama,positivo,ni regalado,2.9230965571628476
+negativo,bigrama,positivo,lo que,2.7239042536694416
+negativo,bigrama,positivo,bastante mal,2.532286343310645
+negativo,bigrama,positivo,funciona bastante,2.532286343310645
+negativo,bigrama,positivo,no vale,2.4433386483302315
+negativo,bigrama,positivo,vale lo,2.4433386483302315
+negativo,bigrama,positivo,le recomiendo,2.436783041571307
+negativo,bigrama,positivo,harto del,2.3882765002782733
+negativo,bigrama,positivo,queda muy,2.3297759485689054
+negativo,bigrama,positivo,me decepcionó,2.272828297660995
+negativo,bigrama,positivo,terminé harto,2.2604971104225062
+negativo,bigrama,positivo,ahora el,2.2585053216830437
+negativo,bigrama,negativo,la caja,-2.1317124173174564
+negativo,bigrama,negativo,el pedido,-1.8719396939526682
+negativo,bigrama,negativo,por ahora,-1.870752569047304
+negativo,bigrama,negativo,superó todas,-1.8186307496762324
+negativo,bigrama,negativo,verdad aun,-1.795571471033666
+negativo,bigrama,negativo,aun con,-1.703956617660655
+negativo,bigrama,negativo,semana lo,-1.6498598075226676
+negativo,bigrama,negativo,con eso,-1.648145655177677
+negativo,bigrama,negativo,cinco estrellas,-1.6306570173065937
+negativo,bigrama,negativo,sin pensarlo,-1.6192585593084996
+negativo,bigrama,negativo,supero todas,-1.6157342431679051
+negativo,bigrama,negativo,un poco,-1.5957380002858175
+neutral,unigrama,positivo,trae,3.807128086606311
+neutral,unigrama,positivo,viene,3.082024796078632
+neutral,unigrama,positivo,paquete,2.76005271190634
+neutral,unigrama,positivo,unidades,2.6284568725303954
+neutral,unigrama,positivo,color,2.6267737168252214
+neutral,unigrama,positivo,kilo,2.473038213111043
+neutral,unigrama,positivo,caja,2.445789833429619
+neutral,unigrama,positivo,no,2.4240298923498136
+neutral,unigrama,positivo,todavía,2.2604407896597705
+neutral,unigrama,positivo,voltios,2.2428782791255073
+neutral,unigrama,positivo,solo,2.0903346371002045
+neutral,unigrama,positivo,tamaños,2.0076276701790894
+neutral,unigrama,negativo,verdad,-5.31561382027443
+neutral,unigrama,negativo,la,-4.669871463848807
+neutral,unigrama,negativo,me,-4.117767078544742
+neutral,unigrama,negativo,resultó,-3.7984650434461673
+neutral,unigrama,negativo,se,-3.662564708595935
+neutral,unigrama,negativo,para,-3.355873988646872
+neutral,unigrama,negativo,luce,-3.1761695504186567
+neutral,unigrama,negativo,resulto,-3.0204143293724304
+neutral,unigrama,negativo,muy,-2.993706134063336
+neutral,unigrama,negativo,calidad,-2.7232577680995016
+neutral,unigrama,negativo,siendo,-2.6167102759155463
+neutral,unigrama,negativo,ser,-2.4939421616958444
+neutral,bigrama,positivo,la caja,3.3667736590654673
+neutral,bigrama,positivo,el paquete,2.7001710089469735
+neutral,bigrama,positivo,por ahora,2.6454626629061693
+neutral,bigrama,positivo,en la,2.41276325011095
+neutral,bigrama,positivo,no lo,2.0828640686035427
+neutral,bigrama,positivo,viene en,2.0528009529286018
+neutral,bigrama,positivo,pedí por,1.9840130071435735
+neutral,bigrama,positivo,le he,1.9195422909567232
+neutral,bigrama,positivo,de siempre,1.7899721574437044
+neutral,bigrama,positivo,el color,1.7183242705295227
+neutral,bigrama,positivo,el pedido,1.6020591658224734
+neutral,bigrama,positivo,funciona con,1.588621053310043
+neutral,bigrama,negativo,la verdad,-4.682643921176463
+neutral,bigrama,negativo,lo que,-3.037399906273316
+neutral,bigrama,negativo,me resultó,-2.538813591617955
+neutral,bigrama,negativo,se mantuvo,-2.4083866983517965
+neutral,bigrama,negativo,para lo,-2.0736716860371076
+neutral,bigrama,negativo,en general,-2.055950182915391
+neutral,bigrama,negativo,se ve,-2.011176944397227
+neutral,bigrama,negativo,el uso,-1.9815883552615199
+neutral,bigrama,negativo,se sintió,-1.9271153078576941
+neutral,bigrama,negativo,terminó siendo,-1.9192917980486357
+neutral,bigrama,negativo,la pantalla,-1.8985530069651488
+neutral,bigrama,negativo,que cuesta,-1.8661667957923864
+positivo,unigrama,positivo,feliz,3.439280446788991
+positivo,unigrama,positivo,verdad,3.2965530245343784
+positivo,unigrama,positivo,la,3.136509026723791
+positivo,unigrama,positivo,me,2.9216036015430573
+positivo,unigrama,positivo,para,2.8701285534882275
+positivo,unigrama,positivo,estrellas,2.7050131697791446
+positivo,unigrama,positivo,superó,2.487001695610184
+positivo,unigrama,positivo,pena,2.319042957488114
+positivo,unigrama,positivo,agradable,2.2482649000324133
+positivo,unigrama,positivo,maravilla,2.205323357008413
+positivo,unigrama,positivo,aun,2.1864545891731226
+positivo,unigrama,positivo,pensarlo,2.146060299808024
+positivo,unigrama,negativo,pero,-3.980699202774071
+positivo,unigrama,negativo,trae,-2.0709954320514545
+positivo,unigrama,negativo,ordinaria,-1.979759584479665
+positivo,unigrama,negativo,regalado,-1.90920136464317
+positivo,unigrama,negativo,terrible,-1.9059079770144267
+positivo,unigrama,negativo,no,-1.9055630421258567
+positivo,unigrama,negativo,problema,-1.7963224399017073
+positivo,unigrama,negativo,defectuosa,-1.732715155702084
+positivo,unigrama,negativo,una,-1.695946719968925
+positivo,unigrama,negativo,paquete,-1.6929754360100906
+positivo,unigrama,negativo,defraudó,-1.6872576871917315
+positivo,unigrama,negativo,defraudo,-1.6350533394602396
+positivo,bigrama,positivo,la verdad,3.217068880987102
+positivo,bigrama,positivo,feliz con,2.9202870314205858
+positivo,bigrama,positivo,cinco estrellas,2.799339746457099
+positivo,bigrama,positivo,por encima,2.6290443079436048
+positivo,bigrama,positivo,sin pensarlo,2.504186002024368
+positivo,bigrama,positivo,superó todas,2.487001695610184
+positivo,bigrama,positivo,encima de,2.3911452410514316
+positivo,bigrama,positivo,para bien,2.3874253928619784
+positivo,bigrama,positivo,cumple de,2.3730946176197825
+positivo,bigrama,positivo,la pena,2.319042957488114
+positivo,bigrama,positivo,funciona de,2.30475508115269
+positivo,bigrama,positivo,estrellas al,2.2687504770029334
+positivo,bigrama,negativo,ni regalado,-1.90920136464317
+positivo,bigrama,negativo,con esto,-1.9018624261303245
+positivo,bigrama,negativo,días con,-1.7317818573706845
+positivo,bigrama,negativo,partes lo,-1.719119956504008
+positivo,bigrama,negativo,pero con,-1.6985799880932184
+positivo,bigrama,negativo,defraudó todas,-1.6872576871917315
+positivo,bigrama,negativo,el paquete,-1.6623110015926448
+positivo,bigrama,negativo,terrible en,-1.6605399109386523
+positivo,bigrama,negativo,días desde,-1.6400302887460847
+positivo,bigrama,negativo,autonomía me,-1.5483528958463706
+positivo,bigrama,negativo,detalle es,-1.5105051105435239
+positivo,bigrama,negativo,de la,-1.507078217959461

@@ -1,0 +1,24 @@
+{
+  "configs": [
+    {
+      "name": "ref005"
+    },
+    {
+      "name": "c1_min5"
+    },
+    {
+      "name": "no_epilogue_interaction"
+    },
+    {
+      "name": "stack_svc_lr_nb"
+    }
+  ],
+  "rule": "F1 macro exclusivamente; brecha <= referencia +0.002; entre candidatos a <=0.003 del mejor F1 elegible, menor brecha; exigir mejora >=0.002 respecto a referencia.",
+  "inner_seed": 42,
+  "outer_seed": 137,
+  "nested_cv": "3x3, desarrollo anterior; no prueba virgen ni corrección total del sesgo histórico",
+  "historical_local_test": "excluida de selección y evaluación",
+  "n_jobs": 1,
+  "resource_choice": "Un proceso para limitar RAM; un hilo numérico configurado antes de importar numpy mediante src.experimento",
+  "goal": "mejor F1 macro sin aumentar materialmente brecha frente a 005; stacking con CDF aprendida solo sobre OOF de cada entrenamiento"
+}

@@ -1,0 +1,104 @@
+{
+  "labels": [
+    "negativo",
+    "neutral",
+    "positivo"
+  ],
+  "accuracy": 0.72625,
+  "f1_macro": 0.7373433119935647,
+  "per_class": {
+    "negativo": {
+      "precision": 0.6230110159118727,
+      "recall": 0.6045130641330166,
+      "f1-score": 0.6136226642555757,
+      "support": 842.0
+    },
+    "neutral": {
+      "precision": 0.9648173207036536,
+      "recall": 0.9972027972027973,
+      "f1-score": 0.9807427785419532,
+      "support": 715.0
+    },
+    "positivo": {
+      "precision": 0.6172985781990521,
+      "recall": 0.6180308422301305,
+      "f1-score": 0.6176644931831654,
+      "support": 843.0
+    },
+    "accuracy": 0.72625,
+    "macro avg": {
+      "precision": 0.7350423049381928,
+      "recall": 0.7399155678553148,
+      "f1-score": 0.7373433119935647,
+      "support": 2400.0
+    },
+    "weighted avg": {
+      "precision": 0.7228343171344624,
+      "recall": 0.72625,
+      "f1-score": 0.7244135573808749,
+      "support": 2400.0
+    }
+  },
+  "confusion_counts": [
+    [
+      509,
+      11,
+      322
+    ],
+    [
+      1,
+      713,
+      1
+    ],
+    [
+      307,
+      15,
+      521
+    ]
+  ],
+  "confusion_normalized": [
+    [
+      0.6045130641330166,
+      0.013064133016627079,
+      0.3824228028503563
+    ],
+    [
+      0.0013986013986013986,
+      0.9972027972027973,
+      0.0013986013986013986
+    ],
+    [
+      0.3641755634638197,
+      0.017793594306049824,
+      0.6180308422301305
+    ]
+  ],
+  "dummy_local": {
+    "accuracy": 0.35083333333333333,
+    "f1_macro": 0.17314414970183015
+  },
+  "cv": {
+    "mean_test_accuracy": 0.7319791666666666,
+    "std_test_accuracy": 0.00736274876961346,
+    "mean_test_f1_macro": 0.7434866299786249,
+    "std_test_f1_macro": 0.006786179003511903
+  },
+  "dummy_cv": {
+    "accuracy_mean": 0.35104166666666664,
+    "accuracy_std": 0.0,
+    "f1_macro_mean": 0.17322025186327425,
+    "f1_macro_std": 0.0
+  },
+  "selected_params": {
+    "clf__C": 4.0,
+    "tfidf__min_df": 2,
+    "tfidf__ngram_range": [
+      1,
+      2
+    ],
+    "tfidf__sublinear_tf": false
+  },
+  "max_iterations_used": [
+    62
+  ]
+}

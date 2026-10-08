@@ -1,0 +1,19 @@
+mean_fit_time,std_fit_time,mean_score_time,std_score_time,param_model,params,split0_test_score,split1_test_score,split2_test_score,mean_test_score,std_test_score,rank_test_score,split0_train_score,split1_train_score,split2_train_score,mean_train_score,std_train_score,name,f1_gap,selected
+1.688689152399699,0.009597625576930351,0.35129284858703613,0.004419963878315243,"Pipeline(steps=[('features', TextFeatures(char_weight=0, max_ngram=1)),
+                ('clf', CheckedSVC(C=2, max_iter=10000, random_state=42))])","{'model': Pipeline(steps=[('features', TextFeatures(char_weight=0, max_ngram=1)),
+                ('clf', CheckedSVC(C=2, max_iter=10000, random_state=42))])}",0.8505632834753158,0.8511559765386282,0.8601408431708436,0.8539533677282626,0.004381891565008003,2,0.999777481061102,0.999777406789093,1.0,0.9998516292833983,0.00010491394422018423,ref005,0.14589826155513574,True
+1.5911016464233398,0.01275851037527464,0.34903494517008465,0.001129056924480969,"Pipeline(steps=[('features',
+                 TextFeatures(char_weight=0, max_ngram=1, min_df=5)),
+                ('clf', CheckedSVC(C=1, max_iter=10000, random_state=42))])","{'model': Pipeline(steps=[('features',
+                 TextFeatures(char_weight=0, max_ngram=1, min_df=5)),
+                ('clf', CheckedSVC(C=1, max_iter=10000, random_state=42))])}",0.8458436973702143,0.8468596480390653,0.8541579667975828,0.8489537707356208,0.0037032221491462,3,0.9962171780387324,0.9957707271068076,0.9966610884361172,0.9962163311938858,0.0003634889838240435,c1_min5,0.1472625604582649,False
+0.8037815093994141,0.0039552347452524355,0.31121031443277997,0.004753583644480476,"Pipeline(steps=[('features',
+                 TfidfVectorizer(analyzer=<src.modelos_006.NoEpilogueInteraction object at 0x11301f820>,
+                                 max_features=160000, min_df=3,
+                                 sublinear_tf=True)),
+                ('clf', CheckedSVC(C=2, max_iter=10000, random_state=42))])","{'model': Pipeline(steps=[('features',
+                 TfidfVectorizer(analyzer=<src.modelos_006.NoEpilogueInteraction object at 0x11301f820>,
+                                 max_features=160000, min_df=3,
+                                 sublinear_tf=True)),
+                ('clf', CheckedSVC(C=2, max_iter=10000, random_state=42))])}",0.8358502035690387,0.8393352119499005,0.8436534412098279,0.8396129522429224,0.0031917063537062343,4,0.9995549621717846,0.999777406789093,1.0,0.9997774563202926,0.00018168593593647132,no_epilogue_interaction,0.16016450407737015,False
+8.257110595703125,0.04118658506550323,0.5629634062449137,0.007429738791835846,SafeStack(),{'model': SafeStack()},0.8523777223062422,0.8518560003958053,0.8598109387630187,0.8546815538216888,0.0036332713308362104,1,0.9995351057020928,0.9995548131315113,0.999535060067727,0.9995416596337771,9.300946102695701e-06,stack_svc_lr_nb,0.1448601058120883,False

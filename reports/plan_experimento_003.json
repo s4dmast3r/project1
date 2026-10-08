@@ -1,0 +1,11 @@
+{
+  "metric": "f1_macro exclusivamente",
+  "seed": 42,
+  "search": "8 LinearSVC: word_char, position, context, discourse x C=[0.5,2]; referencia 002",
+  "selection": "máximo F1 macro CV; entre alternativas a <=0.003 preferir menor brecha F1 entrenamiento-validación",
+  "evaluation": "CV anidada 3 externa x 3 interna en desarrollo; prueba local original excluida",
+  "public_score_002": 0.73888,
+  "score_source": "captura proporcionada por usuario; nombre de métrica no visible en captura",
+  "goal": 0.9,
+  "limitations": "Desarrollo ya usado para experimentos y lectura de ejemplos. CV anidada separa selección de hiperparámetros de evaluación por fold, pero no es un conjunto externo virgen."
+}

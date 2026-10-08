@@ -1,0 +1,53 @@
+{
+  "rule": "Entre configuraciones a <=0.01 de la máxima accuracy CV, elegir la menor brecha media entrenamiento-validación (truncada en cero); desempatar por accuracy CV descendente. Regla fijada antes de ejecutar. No usar prueba local.",
+  "grid": [
+    {
+      "tfidf__ngram_range": [
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "tfidf__min_df": [
+        5
+      ],
+      "tfidf__max_features": [
+        1000,
+        3000,
+        10000
+      ],
+      "clf__C": [
+        0.05,
+        0.2,
+        1.0,
+        4.0
+      ]
+    },
+    {
+      "clf__C": [
+        4.0
+      ],
+      "tfidf__min_df": [
+        2
+      ],
+      "tfidf__ngram_range": [
+        [
+          1,
+          2
+        ]
+      ],
+      "tfidf__sublinear_tf": [
+        false
+      ],
+      "tfidf__max_features": [
+        null
+      ]
+    }
+  ],
+  "seed": 42,
+  "evaluation": "Solo CV desarrollo. Prueba local original ya vista, no se reevalúa ni se atribuye al modelo corregido."
+}

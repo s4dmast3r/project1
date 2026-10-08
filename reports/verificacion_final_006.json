@@ -1,0 +1,8 @@
+{
+  "fresh_process_model_reload": true,
+  "csv_valid": true,
+  "hashes_verified": true,
+  "batch_invariant_probabilities_first_12": true,
+  "prediction_changes_vs005": 116,
+  "note": "Invariancia comprobada sobre 12 textos reales; adicionalmente la CDF de inferencia es fija por diseño."
+}

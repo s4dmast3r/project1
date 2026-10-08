@@ -1,0 +1,119 @@
+Selección en desarrollo: cuatro configuraciones
+                   name  mean_train_score  mean_test_score   f1_gap  selected
+                 ref005          0.999456         0.874163 0.125293     False
+                c1_min5          0.995598         0.875769 0.119828     False
+no_epilogue_interaction          0.999406         0.865145 0.134261     False
+        stack_svc_lr_nb          0.999150         0.878010 0.121140      True
+Fold externo 1/3: selección solamente dentro del entrenamiento
+{'fold': 0, 'selected': 'ref005', 'f1_train': 0.9995548631204095, 'f1_external': 0.8743772587442118, 'reference005_external': 0.8743772587442118}
+Fold externo 2/3: selección solamente dentro del entrenamiento
+{'fold': 1, 'selected': 'stack_svc_lr_nb', 'f1_train': 0.9994064841311451, 'f1_external': 0.8764918706587972, 'reference005_external': 0.8679575965867657}
+Fold externo 3/3: selección solamente dentro del entrenamiento
+{'fold': 2, 'selected': 'stack_svc_lr_nb', 'f1_train': 0.9989479432927739, 'f1_external': 0.8843703468250986, 'reference005_external': 0.8777850966703519}
+{
+  "rule": "Primero filtrar F1 >= referencia +0.002 y brecha <= referencia +0.002. Si no hay candidatos, conservar referencia. Entre los válidos a <=0.003 del mejor F1, menor brecha; desempate mayor F1.",
+  "selected_config": {
+    "name": "stack_svc_lr_nb"
+  },
+  "selection_f1": 0.8780100730007053,
+  "selection_std": 0.004959840984888833,
+  "train_f1": 0.9991503229225894,
+  "gap": 0.1211402499218841,
+  "baseline_selection_f1": 0.8741625013368367,
+  "baseline_gap": 0.1252933873577946,
+  "nested_oof_f1": 0.8784205717991197,
+  "baseline_nested_oof_f1": 0.8733821069232232,
+  "external_fold_mean": 0.8784131587427025,
+  "external_fold_std": 0.004299919632900763,
+  "per_class": {
+    "negativo": {
+      "precision": 0.8241758241758241,
+      "recall": 0.8234421364985163,
+      "f1-score": 0.8238088169808521,
+      "support": 3370.0
+    },
+    "neutral": {
+      "precision": 0.9861687413554634,
+      "recall": 0.9968542467668647,
+      "f1-score": 0.9914827046758213,
+      "support": 2861.0
+    },
+    "positivo": {
+      "precision": 0.8234061658186171,
+      "recall": 0.8165627782724845,
+      "f1-score": 0.8199701937406856,
+      "support": 3369.0
+    },
+    "macro avg": {
+      "precision": 0.8779169104499682,
+      "recall": 0.8789530538459552,
+      "f1-score": 0.8784205717991197,
+      "support": 9600.0
+    },
+    "weighted avg": {
+      "precision": 0.8721829863680656,
+      "recall": 0.8727083333333333,
+      "f1-score": 0.8724320118766006,
+      "support": 9600.0
+    }
+  },
+  "confusion": [
+    [
+      2775,
+      11,
+      584
+    ],
+    [
+      3,
+      2852,
+      6
+    ],
+    [
+      589,
+      29,
+      2751
+    ]
+  ],
+  "labels": [
+    "negativo",
+    "neutral",
+    "positivo"
+  ],
+  "input_sha256": {
+    "data/train.csv": "ae6867261512451d67b7d18a9d6f37529cf1475bdf6c7407f5b01be82bc4c378",
+    "data/eval.csv": "c9aedcb94bc2a50c185fcd8b30b9853f061f234c9fe54f6befb3be8043f0217e",
+    "data/sample_submission.csv": "487528908bc0bb008a74aeabaa0faf994a450da89c13426783d47f692299110b"
+  },
+  "versions": {
+    "scikit-learn": "1.9.1",
+    "pandas": "3.0.6",
+    "numpy": "2.5.3",
+    "joblib": "1.6.0",
+    "matplotlib": "3.11.2",
+    "nbformat": "5.11.1",
+    "nbclient": "0.11.0",
+    "ipykernel": "7.4.0"
+  },
+  "local_test_reused": false,
+  "public_score_006": null,
+  "limitations": "Desarrollo y folds ya examinados. La comparación de 006 separa folds de selección y entrenamiento de meta-modelos; no borra la adaptación histórica al desarrollo. No hay prueba externa nueva.",
+  "submission_created": true,
+  "artifacts_sha256": {
+    "models/modelo_006.joblib": "cd89fcb873caee3e91b68155cdad771e0f1a46108e78b70722c0ef28cf487940",
+    "submissions/submission_006.csv": "1bba40e5c11065abb60d06f29cbda77c347df4aba14570040d4a340c5324eb4a"
+  },
+  "checks": {
+    "ids_order_schema_labels": true,
+    "roundtrip": true,
+    "reload_predictions": true,
+    "disjoint_groups": true
+  },
+  "old_artifacts_unchanged": true,
+  "elapsed_seconds": 321.60802416700244,
+  "source_sha256": {
+    "src/experimento_006.py": "ae24a4329b5d12226190f8b256d2dd73f5959ace963eb5884a4f281559c57a2a",
+    "src/modelos_006.py": "a19dee1e37fc45af969c9a7cc5733676bbb30a66505680c6f4dafc35bf7f22ec",
+    "src/features_004.py": "0295e192394795168bffcb3fbd53059d045b35261ab39b2d868671cdba4f641a",
+    "reports/particiones.csv": "d90cbd30a92a366298a66f2322df4869694798392f19b9c0978dbecac104a931"
+  }
+}

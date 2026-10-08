@@ -1,0 +1,12 @@
+{
+  "submission": "submission_003.csv",
+  "public_score": 0.84333,
+  "source": "Captura proporcionada por el usuario el 2026-10-08; Screenshot 2026-10-08 at 4.11.42 PM",
+  "metric_name_visible_in_screenshot": false,
+  "previous_submission": "submission_002_regularizado.csv",
+  "previous_public_score": 0.73888,
+  "public_score_absolute_increase": 0.10445,
+  "uploaded_by": "usuario",
+  "agent_accessed_platform": false,
+  "note": "Registro posterior al entrenamiento; no modifica las métricas ni el registro histórico del experimento 003."
+}

@@ -1,0 +1,114 @@
+Selección en desarrollo: cuatro configuraciones
+                   name  mean_train_score  mean_test_score   f1_gap  selected
+                 ref005          0.999456         0.874163 0.125293      True
+                c1_min5          0.995598         0.875769 0.119828     False
+no_epilogue_interaction          0.999406         0.865145 0.134261     False
+        stack_svc_lr_nb          0.999150         0.878010 0.121140     False
+Fold externo 1/3: selección solamente dentro del entrenamiento
+Traceback (most recent call last):
+  File "<frozen runpy>", line 203, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/Users/macbookair/Desktop/Uni/5thSemester/Ml/Proyect1/src/experimento_006.py", line 98, in <module>
+    if __name__=='__main__':run()
+                            ~~~^^
+  File "/Users/macbookair/Desktop/Uni/5thSemester/Ml/Proyect1/src/experimento_006.py", line 63, in run
+    inner=search_fit(X.iloc[a].reset_index(drop=True),y.iloc[a].reset_index(drop=True),g.iloc[a].reset_index(drop=True))
+  File "/Users/macbookair/Desktop/Uni/5thSemester/Ml/Proyect1/src/experimento_006.py", line 36, in search_fit
+    search.fit(X,y)
+    ~~~~~~~~~~^^^^^
+  File "/Users/macbookair/Desktop/Uni/5thSemester/Ml/Proyect1/.venv/lib/python3.14/site-packages/sklearn/base.py", line 1403, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+  File "/Users/macbookair/Desktop/Uni/5thSemester/Ml/Proyect1/.venv/lib/python3.14/site-packages/sklearn/model_selection/_search.py", line 1134, in fit
+    self._run_search(evaluate_candidates, callback_ctx=root_callback_ctx)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbookair/Desktop/Uni/5thSemester/Ml/Proyect1/.venv/lib/python3.14/site-packages/sklearn/model_selection/_search.py", line 1721, in _run_search
+    evaluate_candidates(ParameterGrid(self.param_grid), callback_ctx=search_ctx)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbookair/Desktop/Uni/5thSemester/Ml/Proyect1/.venv/lib/python3.14/site-packages/sklearn/model_selection/_search.py", line 1083, in evaluate_candidates
+    out = parallel(
+        delayed(_fit_and_score)(
+    ...<15 lines>...
+        ) in zip(candidate_split_pairs, evaluation_contexts)
+    )
+  File "/Users/macbookair/Desktop/Uni/5thSemester/Ml/Proyect1/.venv/lib/python3.14/site-packages/sklearn/utils/parallel.py", line 91, in __call__
+    return super().__call__(iterable_with_config_and_warning_filters)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbookair/Desktop/Uni/5thSemester/Ml/Proyect1/.venv/lib/python3.14/site-packages/joblib/parallel.py", line 2012, in __call__
+    return output if self.return_generator else list(output)
+                                                ~~~~^^^^^^^^
+  File "/Users/macbookair/Desktop/Uni/5thSemester/Ml/Proyect1/.venv/lib/python3.14/site-packages/joblib/parallel.py", line 1940, in _get_sequential_output
+    res = func(*args, **kwargs)
+  File "/Users/macbookair/Desktop/Uni/5thSemester/Ml/Proyect1/.venv/lib/python3.14/site-packages/sklearn/utils/parallel.py", line 184, in __call__
+    return self.function(*args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/macbookair/Desktop/Uni/5thSemester/Ml/Proyect1/.venv/lib/python3.14/site-packages/sklearn/model_selection/_validation.py", line 855, in _fit_and_score
+    estimator.fit(X_train, y_train, **fit_params)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbookair/Desktop/Uni/5thSemester/Ml/Proyect1/.venv/lib/python3.14/site-packages/sklearn/base.py", line 1403, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+  File "/Users/macbookair/Desktop/Uni/5thSemester/Ml/Proyect1/.venv/lib/python3.14/site-packages/sklearn/pipeline.py", line 645, in fit
+    self._final_estimator.fit(Xt, y, **last_step_params["fit"])
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbookair/Desktop/Uni/5thSemester/Ml/Proyect1/src/modelos_006.py", line 61, in fit
+    self.model_.fit(X,y)
+    ~~~~~~~~~~~~~~~^^^^^
+  File "/Users/macbookair/Desktop/Uni/5thSemester/Ml/Proyect1/.venv/lib/python3.14/site-packages/sklearn/ensemble/_stacking.py", line 706, in fit
+    return super().fit(X, y_encoded, **fit_params)
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbookair/Desktop/Uni/5thSemester/Ml/Proyect1/.venv/lib/python3.14/site-packages/sklearn/base.py", line 1403, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+  File "/Users/macbookair/Desktop/Uni/5thSemester/Ml/Proyect1/.venv/lib/python3.14/site-packages/sklearn/ensemble/_stacking.py", line 211, in fit
+    self.estimators_ = Parallel(n_jobs=self.n_jobs)(
+                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        delayed(_fit_single_estimator)(
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+        if est != "drop"
+        ^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/macbookair/Desktop/Uni/5thSemester/Ml/Proyect1/.venv/lib/python3.14/site-packages/sklearn/utils/parallel.py", line 91, in __call__
+    return super().__call__(iterable_with_config_and_warning_filters)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbookair/Desktop/Uni/5thSemester/Ml/Proyect1/.venv/lib/python3.14/site-packages/joblib/parallel.py", line 2012, in __call__
+    return output if self.return_generator else list(output)
+                                                ~~~~^^^^^^^^
+  File "/Users/macbookair/Desktop/Uni/5thSemester/Ml/Proyect1/.venv/lib/python3.14/site-packages/joblib/parallel.py", line 1940, in _get_sequential_output
+    res = func(*args, **kwargs)
+  File "/Users/macbookair/Desktop/Uni/5thSemester/Ml/Proyect1/.venv/lib/python3.14/site-packages/sklearn/utils/parallel.py", line 184, in __call__
+    return self.function(*args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/macbookair/Desktop/Uni/5thSemester/Ml/Proyect1/.venv/lib/python3.14/site-packages/sklearn/ensemble/_base.py", line 45, in _fit_single_estimator
+    estimator.fit(X, y, **fit_params)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbookair/Desktop/Uni/5thSemester/Ml/Proyect1/.venv/lib/python3.14/site-packages/sklearn/base.py", line 1403, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+  File "/Users/macbookair/Desktop/Uni/5thSemester/Ml/Proyect1/.venv/lib/python3.14/site-packages/sklearn/pipeline.py", line 645, in fit
+    self._final_estimator.fit(Xt, y, **last_step_params["fit"])
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbookair/Desktop/Uni/5thSemester/Ml/Proyect1/src/modelos_006.py", line 22, in fit
+    super().fit(X,y,sample_weight=sample_weight)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbookair/Desktop/Uni/5thSemester/Ml/Proyect1/.venv/lib/python3.14/site-packages/sklearn/base.py", line 1403, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+  File "/Users/macbookair/Desktop/Uni/5thSemester/Ml/Proyect1/.venv/lib/python3.14/site-packages/sklearn/svm/_classes.py", line 330, in fit
+    self.coef_, self.intercept_, n_iter_ = _fit_liblinear(
+                                           ~~~~~~~~~~~~~~^
+        X,
+        ^^
+    ...<13 lines>...
+        sample_weight=sample_weight,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/macbookair/Desktop/Uni/5thSemester/Ml/Proyect1/.venv/lib/python3.14/site-packages/sklearn/svm/_base.py", line 1275, in _fit_liblinear
+    raw_coef_, n_iter_ = liblinear.train_wrap(
+                         ~~~~~~~~~~~~~~~~~~~~^
+        X,
+        ^^
+    ...<10 lines>...
+        sample_weight,
+        ^^^^^^^^^^^^^^
+    )
+    ^
+KeyboardInterrupt

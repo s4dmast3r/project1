@@ -1,0 +1,84 @@
+{
+  "metric": "f1_macro exclusivamente (labels explícitos, zero_division=0)",
+  "seed_cv": 42,
+  "seed_outer": 137,
+  "outer_folds_source": "reports/predicciones_oof_003.csv (mismos folds externos de 003)",
+  "candidates": [
+    {
+      "name": "ref003",
+      "keep_epilogue": false,
+      "use_connector": true,
+      "max_ngram": 3,
+      "min_df": 3,
+      "char_weight": 0.5,
+      "C": 2.0
+    },
+    {
+      "name": "keep_epi",
+      "keep_epilogue": true,
+      "use_connector": true,
+      "max_ngram": 3,
+      "min_df": 3,
+      "char_weight": 0.5,
+      "C": 2.0
+    },
+    {
+      "name": "no_conn",
+      "keep_epilogue": false,
+      "use_connector": false,
+      "max_ngram": 3,
+      "min_df": 3,
+      "char_weight": 0.5,
+      "C": 2.0
+    },
+    {
+      "name": "ng2",
+      "keep_epilogue": false,
+      "use_connector": true,
+      "max_ngram": 2,
+      "min_df": 3,
+      "char_weight": 0.5,
+      "C": 2.0
+    },
+    {
+      "name": "mindf7",
+      "keep_epilogue": false,
+      "use_connector": true,
+      "max_ngram": 3,
+      "min_df": 7,
+      "char_weight": 0.5,
+      "C": 2.0
+    },
+    {
+      "name": "no_char",
+      "keep_epilogue": false,
+      "use_connector": true,
+      "max_ngram": 3,
+      "min_df": 3,
+      "char_weight": 0.0,
+      "C": 2.0
+    },
+    {
+      "name": "c05",
+      "keep_epilogue": false,
+      "use_connector": true,
+      "max_ngram": 3,
+      "min_df": 3,
+      "char_weight": 0.5,
+      "C": 0.5
+    },
+    {
+      "name": "mindf7_no_char",
+      "keep_epilogue": false,
+      "use_connector": true,
+      "max_ngram": 3,
+      "min_df": 7,
+      "char_weight": 0.0,
+      "C": 2.0
+    }
+  ],
+  "selection_rule": "OOF máxima; entre <=0.003 del máximo, menor brecha F1 train-val (CV); desempate mayor OOF",
+  "stop_rule": "la ganadora reemplaza 003 solo si no es ref003 y supera su OOF en >0.002; si no, se conserva 003",
+  "reference_003_oof_recorded": 0.8354002604334546,
+  "limitations": "Los folds externos y el desarrollo ya fueron observados en 003; la OOF es comparación emparejada, no evaluación virgen."
+}

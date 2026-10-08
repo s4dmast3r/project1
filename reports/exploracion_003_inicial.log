@@ -1,0 +1,49 @@
+Inicio selección completa en desarrollo
+/Users/macbookair/Desktop/Uni/5thSemester/Ml/Proyect1/.venv/lib/python3.14/site-packages/joblib/externals/loky/process_executor.py:787: UserWarning: A worker stopped while some jobs were given to the executor. This can be caused by a too short worker timeout or by a memory leak.
+  warnings.warn(
+                                                                                                                      params  mean_train_score  mean_test_score   f1_gap  selected
+                                                                              {'clf__C': 0.5, 'features__mode': 'word_char'}          0.989118         0.749285 0.239833     False
+                                                                               {'clf__C': 0.5, 'features__mode': 'position'}          0.995845         0.821195 0.174651     False
+                                                                                {'clf__C': 0.5, 'features__mode': 'context'}          0.996488         0.785424 0.211065     False
+                                                                              {'clf__C': 2.0, 'features__mode': 'word_char'}          0.999901         0.748318 0.251583     False
+                                                                               {'clf__C': 2.0, 'features__mode': 'position'}          0.999951         0.832819 0.167131      True
+                                                                                {'clf__C': 2.0, 'features__mode': 'context'}          1.000000         0.795971 0.204029     False
+{'clf': LogisticRegression(C=4.0, max_iter=2500, random_state=42), 'features': TfidfVectorizer(max_features=1000, min_df=5)}          0.840439         0.735503 0.104936     False
+CV anidada: fold externo 1/3
+Traceback (most recent call last):
+  File "<frozen runpy>", line 203, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/Users/macbookair/Desktop/Uni/5thSemester/Ml/Proyect1/src/experimento_003.py", line 101, in <module>
+    if __name__=='__main__':run()
+                            ~~~^^
+  File "/Users/macbookair/Desktop/Uni/5thSemester/Ml/Proyect1/src/experimento_003.py", line 67, in run
+    inner=fit_search(X.iloc[a].reset_index(drop=True),y.iloc[a].reset_index(drop=True),g.iloc[a].reset_index(drop=True))
+  File "/Users/macbookair/Desktop/Uni/5thSemester/Ml/Proyect1/src/experimento_003.py", line 35, in fit_search
+    with joblib.parallel_backend('loky',inner_max_num_threads=1): search.fit(X,y)
+                                                                  ~~~~~~~~~~^^^^^
+  File "/Users/macbookair/Desktop/Uni/5thSemester/Ml/Proyect1/.venv/lib/python3.14/site-packages/sklearn/base.py", line 1403, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+  File "/Users/macbookair/Desktop/Uni/5thSemester/Ml/Proyect1/.venv/lib/python3.14/site-packages/sklearn/model_selection/_search.py", line 1134, in fit
+    self._run_search(evaluate_candidates, callback_ctx=root_callback_ctx)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbookair/Desktop/Uni/5thSemester/Ml/Proyect1/.venv/lib/python3.14/site-packages/sklearn/model_selection/_search.py", line 1721, in _run_search
+    evaluate_candidates(ParameterGrid(self.param_grid), callback_ctx=search_ctx)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbookair/Desktop/Uni/5thSemester/Ml/Proyect1/.venv/lib/python3.14/site-packages/sklearn/model_selection/_search.py", line 1083, in evaluate_candidates
+    out = parallel(
+        delayed(_fit_and_score)(
+    ...<15 lines>...
+        ) in zip(candidate_split_pairs, evaluation_contexts)
+    )
+  File "/Users/macbookair/Desktop/Uni/5thSemester/Ml/Proyect1/.venv/lib/python3.14/site-packages/sklearn/utils/parallel.py", line 91, in __call__
+    return super().__call__(iterable_with_config_and_warning_filters)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbookair/Desktop/Uni/5thSemester/Ml/Proyect1/.venv/lib/python3.14/site-packages/joblib/parallel.py", line 2098, in __call__
+    return output if self.return_generator else list(output)
+                                                ~~~~^^^^^^^^
+  File "/Users/macbookair/Desktop/Uni/5thSemester/Ml/Proyect1/.venv/lib/python3.14/site-packages/joblib/parallel.py", line 1704, in _get_outputs
+    yield from self._retrieve()
+  File "/Users/macbookair/Desktop/Uni/5thSemester/Ml/Proyect1/.venv/lib/python3.14/site-packages/joblib/parallel.py", line 1822, in _retrieve
+    time.sleep(0.01)
+    ~~~~~~~~~~^^^^^^
+KeyboardInterrupt

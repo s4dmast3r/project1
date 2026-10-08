@@ -1,0 +1,4 @@
+fold,f1_macro_train,f1_macro_validation,f1_macro_baseline002,selected_params
+0,1.0,0.8325433819320911,0.7298042854753398,"{'clf__C': 2.0, 'features__mode': 'discourse'}"
+1,1.0,0.8294870395590958,0.730320031862916,"{'clf__C': 2.0, 'features__mode': 'discourse'}"
+2,1.0,0.8441586001445135,0.7440381236159331,"{'clf__C': 2.0, 'features__mode': 'discourse'}"

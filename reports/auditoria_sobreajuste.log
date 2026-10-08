@@ -1,0 +1,27 @@
+{'fold': 0, 'train_rows': 7680, 'validation_rows': 1920, 'train_accuracy': 0.9834635416666667, 'validation_accuracy': 0.7322916666666667, 'train_f1_macro': 0.9842948101800107, 'validation_f1_macro': 0.7432745473077302, 'iterations': 66, 'accuracy_gap': 0.25117187500000004}
+{'fold': 1, 'train_rows': 7680, 'validation_rows': 1920, 'train_accuracy': 0.98125, 'validation_accuracy': 0.728125, 'train_f1_macro': 0.9821924689878042, 'validation_f1_macro': 0.7399291476366056, 'iterations': 64, 'accuracy_gap': 0.25312499999999993}
+{'fold': 2, 'train_rows': 7680, 'validation_rows': 1920, 'train_accuracy': 0.984765625, 'validation_accuracy': 0.7458333333333333, 'train_f1_macro': 0.9855340644241398, 'validation_f1_macro': 0.756469587454895, 'iterations': 92, 'accuracy_gap': 0.23893229166666663}
+{'fold': 3, 'train_rows': 7680, 'validation_rows': 1920, 'train_accuracy': 0.9825520833333333, 'validation_accuracy': 0.7244791666666667, 'train_f1_macro': 0.9834290437873262, 'validation_f1_macro': 0.7370688591359903, 'iterations': 36, 'accuracy_gap': 0.25807291666666665}
+{'fold': 4, 'train_rows': 7680, 'validation_rows': 1920, 'train_accuracy': 0.9805989583333333, 'validation_accuracy': 0.7291666666666666, 'train_f1_macro': 0.9815741652528022, 'validation_f1_macro': 0.7406910083579031, 'iterations': 60, 'accuracy_gap': 0.2514322916666667}
+{
+  "checks_passed": true,
+  "development_rows": 9600,
+  "untouched_local_test_rows": 2400,
+  "train_accuracy_mean": 0.9825260416666668,
+  "validation_accuracy_mean": 0.7319791666666666,
+  "train_validation_gap": 0.250546875,
+  "original_local_accuracy": 0.72625,
+  "cv_local_difference": 0.005729166666666674,
+  "vocabulary_and_idf_match_training_only_each_fold": true,
+  "final_vocabulary_and_idf_match_train_csv_only": true,
+  "model_and_submission_unchanged": true,
+  "protected_sha256": {
+    "data/eval.csv": "c9aedcb94bc2a50c185fcd8b30b9853f061f234c9fe54f6befb3be8043f0217e",
+    "data/sample_submission.csv": "487528908bc0bb008a74aeabaa0faf994a450da89c13426783d47f692299110b",
+    "data/train.csv": "ae6867261512451d67b7d18a9d6f37529cf1475bdf6c7407f5b01be82bc4c378",
+    "models/modelo_001.joblib": "34cfcca77d3847655d4643f505a43fd31902868e16708fdbeac23b775da6ac93",
+    "submissions/submission_001.csv": "ba9bea7fdad48072baa1064e42bcff675e4370c0a3e2859255665af449d2ea51",
+    "reports/particiones.csv": "d90cbd30a92a366298a66f2322df4869694798392f19b9c0978dbecac104a931"
+  },
+  "scope": "Configuraci\u00f3n congelada, cinco reajustes diagn\u00f3sticos solo sobre desarrollo. No se reeval\u00faa la prueba local ni se seleccionan nuevos par\u00e1metros. No garantiza ausencia de sobreajuste ni descarta similitud entre par\u00e1frasis."
+}

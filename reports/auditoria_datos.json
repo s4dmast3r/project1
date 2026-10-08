@@ -1,0 +1,66 @@
+{
+  "train": {
+    "shape": [
+      12000,
+      3
+    ],
+    "dtypes": {
+      "id": "str",
+      "text": "str",
+      "label": "str"
+    },
+    "missing": {
+      "id": 0,
+      "text": 0,
+      "label": 0
+    },
+    "unique_ids": true,
+    "empty_text": 0,
+    "exact_duplicate_rows": 0,
+    "normalized_duplicate_rows": 0,
+    "repeated_groups": 0
+  },
+  "eval": {
+    "shape": [
+      3000,
+      2
+    ],
+    "dtypes": {
+      "id": "str",
+      "text": "str"
+    },
+    "missing": {
+      "id": 0,
+      "text": 0
+    },
+    "unique_ids": true,
+    "empty_text": 0,
+    "exact_duplicate_rows": 0,
+    "normalized_duplicate_rows": 0,
+    "repeated_groups": 0
+  },
+  "sample_submission": {
+    "shape": [
+      3000,
+      2
+    ],
+    "dtypes": {
+      "id": "str",
+      "answer": "str"
+    },
+    "missing": {
+      "id": 0,
+      "answer": 0
+    },
+    "unique_ids": true
+  },
+  "contradictory_groups_normalized": 0,
+  "contradictory_groups_exact": 0,
+  "train_eval_overlap_exact": 0,
+  "train_eval_overlap_normalized": 0,
+  "class_counts": {
+    "positivo": 4212,
+    "negativo": 4212,
+    "neutral": 3576
+  }
+}

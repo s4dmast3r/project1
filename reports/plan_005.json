@@ -1,0 +1,54 @@
+{
+  "configs": [
+    {
+      "name": "ref004",
+      "max_ngram": 2,
+      "min_df": 3,
+      "char_weight": 0.5,
+      "max_features": 160000
+    },
+    {
+      "name": "ng1",
+      "max_ngram": 1,
+      "min_df": 3,
+      "char_weight": 0.5,
+      "max_features": 160000
+    },
+    {
+      "name": "ng2_min10",
+      "max_ngram": 2,
+      "min_df": 10,
+      "char_weight": 0.5,
+      "max_features": 160000
+    },
+    {
+      "name": "ng2_cap30000",
+      "max_ngram": 2,
+      "min_df": 3,
+      "char_weight": 0.5,
+      "max_features": 30000
+    },
+    {
+      "name": "ng1_nochar",
+      "max_ngram": 1,
+      "min_df": 3,
+      "char_weight": 0.0,
+      "max_features": 160000
+    },
+    {
+      "name": "ng2_nochar",
+      "max_ngram": 2,
+      "min_df": 3,
+      "char_weight": 0.0,
+      "max_features": 160000
+    }
+  ],
+  "rule": "F1 macro exclusivamente; exigir brecha <= brecha de ref004 +0.002; entre elegibles a <=0.003 del mejor F1, menor brecha; desempate mayor F1. Si no mejora F1 de ref004 en >=0.002, conservar referencia.",
+  "inner_seed": 42,
+  "outer_seed": 137,
+  "nested_cv": "3x3, desarrollo anterior; no prueba virgen ni corrección total del sesgo histórico",
+  "historical_local_test": "excluida de selección y evaluación",
+  "n_jobs": 1,
+  "resource_choice": "Un proceso para limitar RAM; un hilo numérico configurado antes de importar numpy mediante src.experimento",
+  "goal": "mejor F1 macro sin aumentar materialmente la brecha frente a 004"
+}

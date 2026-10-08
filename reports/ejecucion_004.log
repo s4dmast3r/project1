@@ -1,0 +1,32 @@
+== ref003 {'name': 'ref003', 'keep_epilogue': False, 'use_connector': True, 'max_ngram': 3, 'min_df': 3, 'char_weight': 0.5, 'C': 2.0}
+   CV: train=0.999951 test=0.833779 gap=0.166171 | OOF=0.835400
+== keep_epi {'name': 'keep_epi', 'keep_epilogue': True, 'use_connector': True, 'max_ngram': 3, 'min_df': 3, 'char_weight': 0.5, 'C': 2.0}
+   CV: train=1.000000 test=0.833436 gap=0.166564 | OOF=0.834634
+== no_conn {'name': 'no_conn', 'keep_epilogue': False, 'use_connector': False, 'max_ngram': 3, 'min_df': 3, 'char_weight': 0.5, 'C': 2.0}
+   CV: train=1.000000 test=0.823544 gap=0.176456 | OOF=0.822886
+== ng2 {'name': 'ng2', 'keep_epilogue': False, 'use_connector': True, 'max_ngram': 2, 'min_df': 3, 'char_weight': 0.5, 'C': 2.0}
+   CV: train=0.999951 test=0.851422 gap=0.148529 | OOF=0.850578
+== mindf7 {'name': 'mindf7', 'keep_epilogue': False, 'use_connector': True, 'max_ngram': 3, 'min_df': 7, 'char_weight': 0.5, 'C': 2.0}
+   CV: train=0.999901 test=0.834832 gap=0.165069 | OOF=0.835783
+== no_char {'name': 'no_char', 'keep_epilogue': False, 'use_connector': True, 'max_ngram': 3, 'min_df': 3, 'char_weight': 0.0, 'C': 2.0}
+   CV: train=0.999951 test=0.835140 gap=0.164811 | OOF=0.834573
+== c05 {'name': 'c05', 'keep_epilogue': False, 'use_connector': True, 'max_ngram': 3, 'min_df': 3, 'char_weight': 0.5, 'C': 0.5}
+   CV: train=0.997280 test=0.822944 gap=0.174335 | OOF=0.822382
+== mindf7_no_char {'name': 'mindf7_no_char', 'keep_epilogue': False, 'use_connector': True, 'max_ngram': 3, 'min_df': 7, 'char_weight': 0.0, 'C': 2.0}
+   CV: train=0.999555 test=0.839118 gap=0.160437 | OOF=0.837371
+
+== Resultados finales ==
+          name  mean_train_f1  mean_test_f1   f1_gap   oof_f1  eligible  selected
+        ref003       0.999951      0.833779 0.166171 0.835400     False     False
+      keep_epi       1.000000      0.833436 0.166564 0.834634     False     False
+       no_conn       1.000000      0.823544 0.176456 0.822886     False     False
+           ng2       0.999951      0.851422 0.148529 0.850578      True      True
+        mindf7       0.999901      0.834832 0.165069 0.835783     False     False
+       no_char       0.999951      0.835140 0.164811 0.834573     False     False
+           c05       0.997280      0.822944 0.174335 0.822382     False     False
+mindf7_no_char       0.999555      0.839118 0.160437 0.837371     False     False
+
+Referencia 003 OOF registrada=0.835400 reproducida=0.835400
+Ganadora=ng2 OOF=0.850578 gap=0.148529 reemplaza_003=True
+Artefactos 004 generados: models/modelo_004.joblib, submissions/submission_004.csv
+Fin experimento 004

@@ -1,0 +1,199 @@
+{
+  "plan": {
+    "metric": "f1_macro exclusivamente (labels explícitos, zero_division=0)",
+    "seed_cv": 42,
+    "seed_outer": 137,
+    "outer_folds_source": "reports/predicciones_oof_003.csv (mismos folds externos de 003)",
+    "candidates": [
+      {
+        "name": "ref003",
+        "keep_epilogue": false,
+        "use_connector": true,
+        "max_ngram": 3,
+        "min_df": 3,
+        "char_weight": 0.5,
+        "C": 2.0
+      },
+      {
+        "name": "keep_epi",
+        "keep_epilogue": true,
+        "use_connector": true,
+        "max_ngram": 3,
+        "min_df": 3,
+        "char_weight": 0.5,
+        "C": 2.0
+      },
+      {
+        "name": "no_conn",
+        "keep_epilogue": false,
+        "use_connector": false,
+        "max_ngram": 3,
+        "min_df": 3,
+        "char_weight": 0.5,
+        "C": 2.0
+      },
+      {
+        "name": "ng2",
+        "keep_epilogue": false,
+        "use_connector": true,
+        "max_ngram": 2,
+        "min_df": 3,
+        "char_weight": 0.5,
+        "C": 2.0
+      },
+      {
+        "name": "mindf7",
+        "keep_epilogue": false,
+        "use_connector": true,
+        "max_ngram": 3,
+        "min_df": 7,
+        "char_weight": 0.5,
+        "C": 2.0
+      },
+      {
+        "name": "no_char",
+        "keep_epilogue": false,
+        "use_connector": true,
+        "max_ngram": 3,
+        "min_df": 3,
+        "char_weight": 0.0,
+        "C": 2.0
+      },
+      {
+        "name": "c05",
+        "keep_epilogue": false,
+        "use_connector": true,
+        "max_ngram": 3,
+        "min_df": 3,
+        "char_weight": 0.5,
+        "C": 0.5
+      },
+      {
+        "name": "mindf7_no_char",
+        "keep_epilogue": false,
+        "use_connector": true,
+        "max_ngram": 3,
+        "min_df": 7,
+        "char_weight": 0.0,
+        "C": 2.0
+      }
+    ],
+    "selection_rule": "OOF máxima; entre <=0.003 del máximo, menor brecha F1 train-val (CV); desempate mayor OOF",
+    "stop_rule": "la ganadora reemplaza 003 solo si no es ref003 y supera su OOF en >0.002; si no, se conserva 003",
+    "reference_003_oof_recorded": 0.8354002604334546,
+    "limitations": "Los folds externos y el desarrollo ya fueron observados en 003; la OOF es comparación emparejada, no evaluación virgen."
+  },
+  "reference_003_oof_recorded": 0.8354002604334546,
+  "reference_003_oof_reproduced": 0.8354002604334546,
+  "winner": {
+    "name": "ng2",
+    "C": 2.0,
+    "keep_epilogue": false,
+    "use_connector": true,
+    "max_ngram": 2,
+    "min_df": 3,
+    "char_weight": 0.5,
+    "mean_train_f1": 0.999950529333652,
+    "mean_test_f1": 0.8514215995844717,
+    "std_test_f1": 0.00251148666203191,
+    "f1_gap": 0.1485289297491803,
+    "convergence_warnings": 0,
+    "fit_s_mean": 24.70093536376953,
+    "oof_f1": 0.8505779136087757
+  },
+  "replaces_003": true,
+  "n_candidates": 8,
+  "oof_f1_by_candidate": {
+    "ref003": 0.8354002604334546,
+    "keep_epi": 0.8346344001353375,
+    "no_conn": 0.8228858998502573,
+    "ng2": 0.8505779136087757,
+    "mindf7": 0.8357832544049671,
+    "no_char": 0.8345726546363843,
+    "c05": 0.822382100178138,
+    "mindf7_no_char": 0.8373708996418155
+  },
+  "per_class_winner_oof": {
+    "negativo": {
+      "precision": 0.7818504286136565,
+      "recall": 0.7848664688427299,
+      "f1-score": 0.7833555456833999,
+      "support": 3370.0
+    },
+    "neutral": {
+      "precision": 0.9831209094040647,
+      "recall": 0.9975533030408948,
+      "f1-score": 0.9902845246356696,
+      "support": 2861.0
+    },
+    "positivo": {
+      "precision": 0.7845503922751962,
+      "recall": 0.771742356782428,
+      "f1-score": 0.7780936705072572,
+      "support": 3369.0
+    },
+    "macro avg": {
+      "precision": 0.8498405767643057,
+      "recall": 0.8513873762220175,
+      "f1-score": 0.8505779136087757,
+      "support": 9600.0
+    },
+    "weighted avg": {
+      "precision": 0.8427807435216861,
+      "recall": 0.8436458333333333,
+      "f1-score": 0.8431781031119435,
+      "support": 9600.0
+    }
+  },
+  "confusion_winner_oof": [
+    [
+      2645,
+      16,
+      709
+    ],
+    [
+      2,
+      2854,
+      5
+    ],
+    [
+      736,
+      33,
+      2600
+    ]
+  ],
+  "labels": [
+    "negativo",
+    "neutral",
+    "positivo"
+  ],
+  "local_test_reused": false,
+  "public_score_004": null,
+  "versions": {
+    "scikit-learn": "1.9.1",
+    "pandas": "3.0.6",
+    "numpy": "2.5.3",
+    "joblib": "1.6.0",
+    "matplotlib": "3.11.2",
+    "nbformat": "5.11.1",
+    "nbclient": "0.11.0",
+    "ipykernel": "7.4.0"
+  },
+  "input_sha256": {
+    "data/train.csv": "ae6867261512451d67b7d18a9d6f37529cf1475bdf6c7407f5b01be82bc4c378",
+    "data/eval.csv": "c9aedcb94bc2a50c185fcd8b30b9853f061f234c9fe54f6befb3be8043f0217e",
+    "data/sample_submission.csv": "487528908bc0bb008a74aeabaa0faf994a450da89c13426783d47f692299110b"
+  },
+  "original_files_unchanged": true,
+  "artifacts_sha256": {
+    "models/modelo_004.joblib": "e2281ddc799b12ea05033c632b4f79f204e63a25751e0a17823fbf280529d5a0",
+    "submissions/submission_004.csv": "5ac3fd3c10debf38f056b15eb2bcd0c112afd5bcc8977999625130505f5f4a6f"
+  },
+  "checks": {
+    "csv_ids_order_schema_labels": true,
+    "reload_predictions": true,
+    "roundtrip_csv": true,
+    "disjoint_groups": true,
+    "originals_unchanged": true
+  }
+}
