@@ -36,7 +36,7 @@ def run():
         assert sha(p) == h, p
 
     train = pd.read_csv('data/train.csv', dtype={'id': str})
-    feats = TextFeatures007b(thirds=True, min_df=3, max_features=160000)
+    feats = TextFeatures007b(thirds=True, rules=True, min_df=3, max_features=160000)
     clf = LinearSVC(penalty='l1', dual=False, C=2.0, max_iter=20000, random_state=42)
     model = Pipeline([('features', feats), ('clf', clf)]).fit(train.text.fillna(''), train.label)
     assert np.max(model['clf'].n_iter_) < model['clf'].max_iter
