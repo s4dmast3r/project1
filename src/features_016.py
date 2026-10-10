@@ -84,7 +84,7 @@ class DiscourseAnalyzer:
                                 self.edge_bigrams, self.thirds, self.rules)
 
 
-class TextFeatures007b(BaseEstimator, TransformerMixin):
+class TextFeatures016(BaseEstimator, TransformerMixin):
     """Representación 005 parametrizada (canal discursivo único, sin caracteres)."""
 
     def __init__(self, global_max_ngram=2, mid_bucket=False, edge_bigrams=False, thirds=False,

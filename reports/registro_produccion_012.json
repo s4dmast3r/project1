@@ -1,0 +1,19 @@
+{
+  "base_model": "011 + TextFeatures016(rules=True), LinearSVC L1 C=2",
+  "decision_rule": "argmax sobre [s_neg+0.2, s_neu, s_pos+0.2] (igual que 011)",
+  "justification": "La etiqueta depende de la última opinión y su conector; los tokens R: lo representan explícitamente. Léxico solo semántico (sin frases minadas con etiquetas) para evitar fuga.",
+  "local_evidence": "CV 5 folds seed 0: val 0.8982 -> 0.9013, brecha 0.089 -> 0.080.",
+  "n_rule_tokens_vocab": 93,
+  "n_changed_vs_011": 45,
+  "pred_distribution": {
+    "positivo": 1126,
+    "negativo": 1043,
+    "neutral": 831
+  },
+  "artifacts_sha256": {
+    "models/modelo_012.joblib": "73c5ac83953f30c24300b4115398174e20315ecbc32ce010526686bbe897762f",
+    "submissions/submission_012.csv": "1d535a9d629a15004dd5c59181c30d6950663bcdfb2eabb0a0c7418b5b3008e9"
+  },
+  "elapsed_seconds": 34.02699699997902,
+  "honest_note": "Ganancia dentro del ruido entre folds; ~16% de reseñas tienen etiqueta no predecible desde el texto."
+}
