@@ -1,0 +1,197 @@
+{
+  "plan": {
+    "date": "2026-10-09",
+    "primary_metric": "accuracy",
+    "secondary": "F1 macro",
+    "authorization": "Usuario confirmó accuracy principal y F1 macro control en este chat.",
+    "candidates": [
+      "ref011",
+      "polarity_c1",
+      "polarity_c2",
+      "ovo_l1",
+      "sigmoid"
+    ],
+    "seeds": [
+      8803,
+      9901,
+      11003
+    ],
+    "folds": 3,
+    "historical_seed": 137,
+    "gates": ">=7/9 folds accuracy; delta medio accuracy >=0.001; delta F1 medio >=0; aumento brecha accuracy media <=0.005; no perder accuracy ni F1 en137.",
+    "selection": "Mayor accuracy media entre elegibles; empate menor brecha. Sin rondas nuevas ni cambios de criterio después de observar.",
+    "budget": "45 ajustes externos de pipeline; hasta15 adicionales en137 si hay elegibles; un ajuste final si aprueba.",
+    "limitations": "Se reutilizan particiones de013 para comparación. Todos los scores son de selección sobre datos ya explorados; no prueba independiente.",
+    "sources": "reports/investigacion_012b.md",
+    "gate_rationale": "Umbral de ganancia0.001 y tolerancia de brecha0.005 fijados antes de medir esta ronda; distintos de011b. No implican significación ni ausencia de sobreajuste."
+  },
+  "winner": null,
+  "submission_created": false,
+  "criteria": [
+    {
+      "name": "polarity_c1",
+      "accuracy_gain": -0.005034722222222195,
+      "f1_gain": -0.004794044004879557,
+      "gap_change": -0.030833333333333286,
+      "folds_won": 1,
+      "passes": false
+    },
+    {
+      "name": "polarity_c2",
+      "accuracy_gain": -0.003229166666666653,
+      "f1_gain": -0.003072444154762192,
+      "gap_change": 0.000260416666666675,
+      "folds_won": 0,
+      "passes": false
+    },
+    {
+      "name": "ovo_l1",
+      "accuracy_gain": -0.004652777777777765,
+      "f1_gain": -0.0046256274628746485,
+      "gap_change": 0.0010590277777777907,
+      "folds_won": 0,
+      "passes": false
+    },
+    {
+      "name": "sigmoid",
+      "accuracy_gain": -0.0001388888888889106,
+      "f1_gain": -0.00019775188358702364,
+      "gap_change": 0.00013888888888891523,
+      "folds_won": 2,
+      "passes": false
+    }
+  ],
+  "historical": {},
+  "seed_results": [
+    {
+      "name": "ref011",
+      "seed": 8803,
+      "accuracy": 0.901875,
+      "f1": 0.9063807072965505,
+      "gap": 0.08645833333333335
+    },
+    {
+      "name": "polarity_c1",
+      "seed": 8803,
+      "accuracy": 0.8976041666666666,
+      "f1": 0.9023187082153341,
+      "gap": 0.055000000000000014
+    },
+    {
+      "name": "polarity_c2",
+      "seed": 8803,
+      "accuracy": 0.9001041666666667,
+      "f1": 0.9046969585745815,
+      "gap": 0.08453125000000002
+    },
+    {
+      "name": "ovo_l1",
+      "seed": 8803,
+      "accuracy": 0.8985416666666667,
+      "f1": 0.9030095471242777,
+      "gap": 0.0855729166666667
+    },
+    {
+      "name": "sigmoid",
+      "seed": 8803,
+      "accuracy": 0.901875,
+      "f1": 0.9063127274801891,
+      "gap": 0.08640625000000002
+    },
+    {
+      "name": "ref011",
+      "seed": 9901,
+      "accuracy": 0.9,
+      "f1": 0.9045265255540573,
+      "gap": 0.08796875
+    },
+    {
+      "name": "polarity_c1",
+      "seed": 9901,
+      "accuracy": 0.8944791666666667,
+      "f1": 0.8992666412544179,
+      "gap": 0.05671875000000004
+    },
+    {
+      "name": "polarity_c2",
+      "seed": 9901,
+      "accuracy": 0.8961458333333333,
+      "f1": 0.9008555709931952,
+      "gap": 0.08947916666666662
+    },
+    {
+      "name": "ovo_l1",
+      "seed": 9901,
+      "accuracy": 0.8948958333333333,
+      "f1": 0.8994642628800961,
+      "gap": 0.09005208333333332
+    },
+    {
+      "name": "sigmoid",
+      "seed": 9901,
+      "accuracy": 0.8995833333333333,
+      "f1": 0.9040599615781614,
+      "gap": 0.08843749999999999
+    },
+    {
+      "name": "ref011",
+      "seed": 11003,
+      "accuracy": 0.8988541666666666,
+      "f1": 0.9034701461390129,
+      "gap": 0.08973958333333328
+    },
+    {
+      "name": "polarity_c1",
+      "seed": 11003,
+      "accuracy": 0.8935416666666667,
+      "f1": 0.89840989750523,
+      "gap": 0.05994791666666669
+    },
+    {
+      "name": "polarity_c2",
+      "seed": 11003,
+      "accuracy": 0.8947916666666667,
+      "f1": 0.8996075169575574,
+      "gap": 0.0909375
+    },
+    {
+      "name": "ovo_l1",
+      "seed": 11003,
+      "accuracy": 0.8933333333333333,
+      "f1": 0.898026686596623,
+      "gap": 0.09171874999999996
+    },
+    {
+      "name": "sigmoid",
+      "seed": 11003,
+      "accuracy": 0.8988541666666666,
+      "f1": 0.9034114342805092,
+      "gap": 0.08973958333333336
+    }
+  ],
+  "input_sha256": {
+    "data/train.csv": "ae6867261512451d67b7d18a9d6f37529cf1475bdf6c7407f5b01be82bc4c378",
+    "data/eval.csv": "c9aedcb94bc2a50c185fcd8b30b9853f061f234c9fe54f6befb3be8043f0217e",
+    "data/sample_submission.csv": "487528908bc0bb008a74aeabaa0faf994a450da89c13426783d47f692299110b"
+  },
+  "versions": {
+    "python": "3.14.7 (main, Aug  5 2026, 10:29:49) [Clang 21.0.0 (clang-2100.1.1.101)]",
+    "sklearn": "1.9.1",
+    "numpy": "2.5.3",
+    "pandas": "3.0.6",
+    "joblib": "1.6.0"
+  },
+  "public011": 0.89888,
+  "public012": null,
+  "local_test_used_for_selection": false,
+  "decision": "Conservar011: ninguna candidata supera los criterios. No crear un envío equivalente ni bajar umbrales a posteriori.",
+  "old_artifacts_unchanged": true,
+  "elapsed_seconds": 932.7577457920002,
+  "source_sha256": {
+    "src/experimento_012b.py": "08602584581890ff8972db08fa9276b465cacd59d3e9d63c4398b6ab2aed62aa",
+    "src/modelos_012b.py": "91757138d193b72799f66320ce857b7f4b647040b60267a37c4b0c526828903b",
+    "src/experimento.py": "0740def773bb28f19f896485f1db81175f4e81feac01f6a894d83aba43923d7b",
+    "src/features_007b.py": "32168dc3045b8b146e3260ddfb8b04c3153e1210ade017050ec2243fe7c3daa3",
+    "reports/particiones.csv": "d90cbd30a92a366298a66f2322df4869694798392f19b9c0978dbecac104a931"
+  }
+}

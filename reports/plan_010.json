@@ -1,0 +1,25 @@
+{
+  "candidates": [
+    "ref009",
+    "l1_c05",
+    "l1_c15",
+    "l1_c2",
+    "l2_c1"
+  ],
+  "fresh_seeds": [
+    5003,
+    6007,
+    7001
+  ],
+  "historical_seed": 137,
+  "metric": "f1_macro; labels explícitos; zero_division=0",
+  "gates": [
+    "ganar >=7 de 9 folds emparejados frente a ref009 (3 semillas nuevas)",
+    "delta medio F1 macro OOF >= 0.003",
+    "brecha media <= brecha media de ref009",
+    "no perder F1 OOF frente a ref009 en semilla histórica 137"
+  ],
+  "control_l2": "l2_c1 separa el efecto de C del efecto de L1.",
+  "limitations": "Las semillas nuevas no crean datos vírgenes; todos los scores se usan para esta decisión pre-registrada, no son evaluación externa independiente.",
+  "reference_public009": 0.89555
+}

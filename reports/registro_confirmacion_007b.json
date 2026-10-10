@@ -1,0 +1,138 @@
+{
+  "criterio": {
+    "motivo": "thirds ganó 9/9 folds en 007b pero bajo el umbral +0.005 por semilla; se confirma en semillas nuevas con criterio fijado antes de ver resultados.",
+    "nuevas_semillas": [
+      1142,
+      2087,
+      3313
+    ],
+    "puertas": [
+      "ganar >=7 de 9 folds emparejados (thirds vs ref005)",
+      "delta medio F1 macro OOF >= 0.002",
+      "brecha media thirds <= brecha media ref005",
+      "no perder F1 OOF en semilla histórica 137"
+    ],
+    "nota": "Los scores de las semillas nuevas se usan para esta decisión pre-registrada; no son evaluación externa independiente."
+  },
+  "seed_rows": [
+    {
+      "seed": 1142,
+      "ref005_oof": 0.8735585492384986,
+      "thirds_oof": 0.8752146747768732,
+      "oof_delta": 0.0016561255383745754,
+      "fold_wins": 3,
+      "gap_ref": 0.1257192708221577,
+      "gap_thirds": 0.12430785319536497,
+      "gap_delta": -0.001411417626792727,
+      "fold_deltas": [
+        0.00154,
+        0.00322,
+        0.00021
+      ]
+    },
+    {
+      "seed": 2087,
+      "ref005_oof": 0.8733616720568275,
+      "thirds_oof": 0.8782606721898311,
+      "oof_delta": 0.004899000133003595,
+      "fold_wins": 3,
+      "gap_ref": 0.1262478909162882,
+      "gap_thirds": 0.12139581550731963,
+      "gap_delta": -0.004852075408968579,
+      "fold_deltas": [
+        0.00418,
+        0.00219,
+        0.00834
+      ]
+    },
+    {
+      "seed": 3313,
+      "ref005_oof": 0.8747119637908977,
+      "thirds_oof": 0.8781064534012372,
+      "oof_delta": 0.0033944896103395017,
+      "fold_wins": 3,
+      "gap_ref": 0.12491858637348503,
+      "gap_thirds": 0.1214715924640783,
+      "gap_delta": -0.003446993909406726,
+      "fold_deltas": [
+        0.00205,
+        0.00502,
+        0.00312
+      ]
+    }
+  ],
+  "totals": {
+    "fold_wins": 9,
+    "mean_oof_delta": 0.003316538427239224,
+    "mean_gap_delta": -0.0032368289817226773
+  },
+  "gates": {
+    "wins_7_9": true,
+    "mean_delta_002": true,
+    "gap_not_worse": true,
+    "historical_137": true
+  },
+  "approved": true,
+  "submission_created": true,
+  "artifacts_sha256": {
+    "models/modelo_007.joblib": "0c777aae1e777231391e444c8285b504b5e34f24ea632d328e7aee62f1a19301",
+    "submissions/submission_007.csv": "641bf0644b9d179e424ce9161826c51db39612e55bb0e1310244f50b821b68ff"
+  },
+  "per_class_last_seed_oof": {
+    "negativo": {
+      "precision": 0.8246290801186944,
+      "recall": 0.8246290801186944,
+      "f1-score": 0.8246290801186944,
+      "support": 3370.0
+    },
+    "neutral": {
+      "precision": 0.9797320508416352,
+      "recall": 0.9968542467668647,
+      "f1-score": 0.9882189882189882,
+      "support": 2861.0
+    },
+    "positivo": {
+      "precision": 0.8276589334136788,
+      "recall": 0.815375482338973,
+      "f1-score": 0.8214712918660287,
+      "support": 3369.0
+    },
+    "macro avg": {
+      "precision": 0.8773400214580027,
+      "recall": 0.8789529364081773,
+      "f1-score": 0.8781064534012372,
+      "support": 9600.0
+    },
+    "weighted avg": {
+      "precision": 0.8719162858467295,
+      "recall": 0.8727083333333333,
+      "f1-score": 0.8722740945407474,
+      "support": 9600.0
+    }
+  },
+  "confusion_last_seed": [
+    [
+      2779,
+      24,
+      567
+    ],
+    [
+      4,
+      2852,
+      5
+    ],
+    [
+      587,
+      35,
+      2747
+    ]
+  ],
+  "csv_checks_passed": true,
+  "decision": "thirds aprobada por confirmación pre-registrada en semillas nuevas; submission_007.csv generado.",
+  "elapsed_seconds": 136.772217834,
+  "source_sha256": {
+    "src/confirmar_007b.py": "28c5d46131cfa46819dbe26f4ed8b41c4aea9a752f1d61754ad191247b46bfdb",
+    "src/features_007b.py": "32168dc3045b8b146e3260ddfb8b04c3153e1210ade017050ec2243fe7c3daa3",
+    "reports/particiones.csv": "d90cbd30a92a366298a66f2322df4869694798392f19b9c0978dbecac104a931"
+  }
+}

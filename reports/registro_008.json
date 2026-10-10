@@ -1,0 +1,212 @@
+{
+  "plan": {
+    "candidates": [
+      "ref007",
+      "split_w1",
+      "split_w05",
+      "split_w15"
+    ],
+    "weights": {
+      "split_w1": 1.0,
+      "split_w05": 0.5,
+      "split_w15": 1.5
+    },
+    "fresh_seeds": [
+      711,
+      1237,
+      2003
+    ],
+    "historical_seed": 137,
+    "metric": "f1_macro; labels explícitos; zero_division=0",
+    "gates": [
+      "ganar >=7 de 9 folds emparejados frente a ref007 (3 semillas nuevas)",
+      "delta medio F1 macro OOF >= 0.003",
+      "brecha media <= brecha media de ref007",
+      "no perder F1 OOF frente a ref007 en semilla histórica 137"
+    ],
+    "excluded": "Las variantes suave (triangular) y de identidad del conector requieren implementación y controles adicionales; se dejan para una ronda posterior fijada de antemano, no se introducen tras ver estos resultados.",
+    "limitations": "Las semillas nuevas no crean datos vírgenes; el desarrollo se ha explorado en muchas rondas. Todos los scores de las semillas nuevas se usan para esta decisión pre-registrada; no son una evaluación externa independiente.",
+    "reference_public007": 0.88888
+  },
+  "seed_rows": [
+    {
+      "name": "split_w1",
+      "seed": 711,
+      "ref007_oof": 0.8797300294380049,
+      "cand_oof": 0.8701317311922138,
+      "oof_delta": -0.00959829824579117,
+      "fold_wins": 0,
+      "gap_ref": 0.11984034279918787,
+      "gap_cand": 0.12908151399554282,
+      "gap_delta": 0.009241171196354953,
+      "fold_deltas": [
+        -0.0114,
+        -0.01097,
+        -0.00639
+      ]
+    },
+    {
+      "name": "split_w05",
+      "seed": 711,
+      "ref007_oof": 0.8797300294380049,
+      "cand_oof": 0.8791023400281642,
+      "oof_delta": -0.0006276894098407038,
+      "fold_wins": 1,
+      "gap_ref": 0.11984034279918787,
+      "gap_cand": 0.120567051509698,
+      "gap_delta": 0.0007267087105101294,
+      "fold_deltas": [
+        -0.00159,
+        -0.0006,
+        0.0003
+      ]
+    },
+    {
+      "name": "split_w15",
+      "seed": 711,
+      "ref007_oof": 0.8797300294380049,
+      "cand_oof": 0.8627506367311549,
+      "oof_delta": -0.016979392706850005,
+      "fold_wins": 0,
+      "gap_ref": 0.11984034279918787,
+      "gap_cand": 0.13508145819115117,
+      "gap_delta": 0.015241115391963295,
+      "fold_deltas": [
+        -0.01949,
+        -0.01395,
+        -0.01748
+      ]
+    },
+    {
+      "name": "split_w1",
+      "seed": 1237,
+      "ref007_oof": 0.875045336631866,
+      "cand_oof": 0.8731698745288398,
+      "oof_delta": -0.0018754621030262486,
+      "fold_wins": 0,
+      "gap_ref": 0.12457656829677295,
+      "gap_cand": 0.12586188589473812,
+      "gap_delta": 0.0012853175979651715,
+      "fold_deltas": [
+        -0.00163,
+        -0.00059,
+        -0.00342
+      ]
+    },
+    {
+      "name": "split_w05",
+      "seed": 1237,
+      "ref007_oof": 0.875045336631866,
+      "cand_oof": 0.8774426316027908,
+      "oof_delta": 0.0023972949709247793,
+      "fold_wins": 2,
+      "gap_ref": 0.12457656829677295,
+      "gap_cand": 0.12218243704717369,
+      "gap_delta": -0.0023941312495992656,
+      "fold_deltas": [
+        0.00333,
+        0.00432,
+        -0.00047
+      ]
+    },
+    {
+      "name": "split_w15",
+      "seed": 1237,
+      "ref007_oof": 0.875045336631866,
+      "cand_oof": 0.8638285064790027,
+      "oof_delta": -0.011216830152863344,
+      "fold_wins": 0,
+      "gap_ref": 0.12457656829677295,
+      "gap_cand": 0.13366264735397318,
+      "gap_delta": 0.009086079057200228,
+      "fold_deltas": [
+        -0.0139,
+        -0.00833,
+        -0.0114
+      ]
+    },
+    {
+      "name": "split_w1",
+      "seed": 2003,
+      "ref007_oof": 0.8770813279449757,
+      "cand_oof": 0.8744829261752151,
+      "oof_delta": -0.002598401769760672,
+      "fold_wins": 1,
+      "gap_ref": 0.12267497300158903,
+      "gap_cand": 0.12471864262878103,
+      "gap_delta": 0.0020436696271920046,
+      "fold_deltas": [
+        -0.00401,
+        -0.00505,
+        0.00129
+      ]
+    },
+    {
+      "name": "split_w05",
+      "seed": 2003,
+      "ref007_oof": 0.8770813279449757,
+      "cand_oof": 0.8775623906194571,
+      "oof_delta": 0.0004810626744813362,
+      "fold_wins": 2,
+      "gap_ref": 0.12267497300158903,
+      "gap_cand": 0.12214255006655923,
+      "gap_delta": -0.0005324229350297943,
+      "fold_deltas": [
+        0.0003,
+        -0.00243,
+        0.00358
+      ]
+    },
+    {
+      "name": "split_w15",
+      "seed": 2003,
+      "ref007_oof": 0.8770813279449757,
+      "cand_oof": 0.8654452932719418,
+      "oof_delta": -0.01163603467303398,
+      "fold_wins": 0,
+      "gap_ref": 0.12267497300158903,
+      "gap_cand": 0.13237672043487717,
+      "gap_delta": 0.009701747433288138,
+      "fold_deltas": [
+        -0.0117,
+        -0.01604,
+        -0.00716
+      ]
+    }
+  ],
+  "checks": [
+    {
+      "name": "split_w1",
+      "fold_wins": 1,
+      "mean_oof_delta": -0.004690720706192697,
+      "mean_gap_delta": 0.004190052807170709,
+      "passes_fresh": false
+    },
+    {
+      "name": "split_w05",
+      "fold_wins": 5,
+      "mean_oof_delta": 0.0007502227451884705,
+      "mean_gap_delta": -0.0007332818247063102,
+      "passes_fresh": false
+    },
+    {
+      "name": "split_w15",
+      "fold_wins": 0,
+      "mean_oof_delta": -0.013277419177582442,
+      "mean_gap_delta": 0.011342980627483887,
+      "passes_fresh": false
+    }
+  ],
+  "historical_137": {},
+  "winner": null,
+  "submission_created": false,
+  "reference_public007": 0.88888,
+  "decision": "Conservar007: ninguna candidata cumple las cuatro puertas pre-registradas. No generar CSV.",
+  "elapsed_seconds": 195.7153894590001,
+  "source_sha256": {
+    "src/experimento_008.py": "8bd88f1d5503ed47044a6a4eabe0049fee8cddd72a70df891e6aaa9adf02e94c",
+    "src/features_008.py": "000ed0b7e1861765e309ab2e1fea4ab0ec671b0ab0812455ebd3717810e22bf0",
+    "src/features_007b.py": "32168dc3045b8b146e3260ddfb8b04c3153e1210ade017050ec2243fe7c3daa3",
+    "reports/particiones.csv": "d90cbd30a92a366298a66f2322df4869694798392f19b9c0978dbecac104a931"
+  }
+}

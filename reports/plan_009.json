@@ -1,0 +1,24 @@
+{
+  "candidates": [
+    "ref007",
+    "l1_c1",
+    "charwb",
+    "nbsvm_word"
+  ],
+  "fresh_seeds": [
+    1009,
+    2027,
+    3053
+  ],
+  "historical_seed": 137,
+  "metric": "f1_macro; labels explícitos; zero_division=0",
+  "gates": [
+    "ganar >=7 de 9 folds emparejados frente a ref007 (3 semillas nuevas)",
+    "delta medio F1 macro OOF >= 0.003",
+    "brecha media <= brecha media de ref007",
+    "no perder F1 OOF frente a ref007 en semilla histórica 137"
+  ],
+  "strategies": "L1 (selección de rasgos), canal char_wb 2-6 (morfología/ortografía), NB-SVM (re-ponderación NB + logística). Diferentes de la ponderación de tercios (008) y de negación/contraste/regularización C (007).",
+  "limitations": "Las semillas nuevas no crean datos vírgenes. Todos los scores de las semillas nuevas se usan para esta decisión pre-registrada; no son una evaluación externa independiente.",
+  "reference_public007": 0.88888
+}

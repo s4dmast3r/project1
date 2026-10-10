@@ -1,0 +1,226 @@
+{
+  "plan": {
+    "date": "2026-10-09",
+    "primary_metric": "accuracy",
+    "secondary": "F1 macro",
+    "authorization": "Usuario confirmó accuracy principal y F1 macro control en este chat.",
+    "candidates": [
+      "ref010",
+      "binary_idf",
+      "binary_noidf",
+      "tf_noidf",
+      "connector_l1",
+      "logistic_l1"
+    ],
+    "seeds": [
+      8803,
+      9901,
+      11003
+    ],
+    "folds": 3,
+    "historical_seed": 137,
+    "gates": ">=7/9 folds accuracy; delta medio accuracy >=0.003; delta F1 medio >=0; brecha accuracy media no mayor; no perder accuracy ni F1 en137.",
+    "selection": "Mayor accuracy media entre elegibles; empate menor brecha. Sin rondas nuevas ni cambios de criterio después de observar.",
+    "budget": "54 ajustes de pipeline; hasta18 adicionales en137 si hay elegibles; un ajuste final si aprueba.",
+    "limitations": "Se reutilizan particiones de013 para comparación. Todos los scores son de selección sobre datos ya explorados; no prueba independiente.",
+    "sources": "reports/investigacion_011b.md"
+  },
+  "winner": null,
+  "submission_created": false,
+  "criteria": [
+    {
+      "name": "binary_idf",
+      "accuracy_gain": -0.00045138888888888545,
+      "f1_gain": -0.0003766329831397612,
+      "gap_change": 0.0010243055555555353,
+      "folds_won": 4,
+      "passes": false
+    },
+    {
+      "name": "binary_noidf",
+      "accuracy_gain": -0.005659722222222219,
+      "f1_gain": -0.005559510959377863,
+      "gap_change": -0.005364583333333367,
+      "folds_won": 0,
+      "passes": false
+    },
+    {
+      "name": "tf_noidf",
+      "accuracy_gain": -0.0060069444444444215,
+      "f1_gain": -0.006011729616929196,
+      "gap_change": -0.008628472222222247,
+      "folds_won": 0,
+      "passes": false
+    },
+    {
+      "name": "connector_l1",
+      "accuracy_gain": -0.0007291666666666327,
+      "f1_gain": -0.0007346385886088935,
+      "gap_change": 0.0013194444444444425,
+      "folds_won": 3,
+      "passes": false
+    },
+    {
+      "name": "logistic_l1",
+      "accuracy_gain": -0.006319444444444433,
+      "f1_gain": -0.006595051518434425,
+      "gap_change": -0.02317708333333332,
+      "folds_won": 0,
+      "passes": false
+    }
+  ],
+  "historical": {},
+  "seed_results": [
+    {
+      "name": "ref010",
+      "seed": 8803,
+      "accuracy": 0.9009375,
+      "f1": 0.9051854385218854,
+      "gap": 0.08713541666666665
+    },
+    {
+      "name": "binary_idf",
+      "seed": 8803,
+      "accuracy": 0.9009375,
+      "f1": 0.9052832819541522,
+      "gap": 0.08776041666666667
+    },
+    {
+      "name": "binary_noidf",
+      "seed": 8803,
+      "accuracy": 0.8951041666666667,
+      "f1": 0.8995727469377618,
+      "gap": 0.0819791666666666
+    },
+    {
+      "name": "tf_noidf",
+      "seed": 8803,
+      "accuracy": 0.8936458333333334,
+      "f1": 0.8979210075525809,
+      "gap": 0.07984374999999995
+    },
+    {
+      "name": "connector_l1",
+      "seed": 8803,
+      "accuracy": 0.8992708333333334,
+      "f1": 0.9035536541531456,
+      "gap": 0.08890625
+    },
+    {
+      "name": "logistic_l1",
+      "seed": 8803,
+      "accuracy": 0.8930208333333334,
+      "f1": 0.8969685145515259,
+      "gap": 0.06562500000000004
+    },
+    {
+      "name": "ref010",
+      "seed": 9901,
+      "accuracy": 0.8983333333333333,
+      "f1": 0.9025965997968095,
+      "gap": 0.08942708333333338
+    },
+    {
+      "name": "binary_idf",
+      "seed": 9901,
+      "accuracy": 0.8969791666666667,
+      "f1": 0.901324687279419,
+      "gap": 0.09166666666666667
+    },
+    {
+      "name": "binary_noidf",
+      "seed": 9901,
+      "accuracy": 0.8926041666666666,
+      "f1": 0.8968967363697254,
+      "gap": 0.08380208333333335
+    },
+    {
+      "name": "tf_noidf",
+      "seed": 9901,
+      "accuracy": 0.8941666666666667,
+      "f1": 0.8983574971655405,
+      "gap": 0.07869791666666666
+    },
+    {
+      "name": "connector_l1",
+      "seed": 9901,
+      "accuracy": 0.8979166666666667,
+      "f1": 0.9021967962325399,
+      "gap": 0.09046875000000003
+    },
+    {
+      "name": "logistic_l1",
+      "seed": 9901,
+      "accuracy": 0.893125,
+      "f1": 0.8971227059489187,
+      "gap": 0.0649479166666667
+    },
+    {
+      "name": "ref010",
+      "seed": 11003,
+      "accuracy": 0.8979166666666667,
+      "f1": 0.902290915053261,
+      "gap": 0.09036458333333335
+    },
+    {
+      "name": "binary_idf",
+      "seed": 11003,
+      "accuracy": 0.8979166666666667,
+      "f1": 0.9023350851889654,
+      "gap": 0.09057291666666663
+    },
+    {
+      "name": "binary_noidf",
+      "seed": 11003,
+      "accuracy": 0.8925,
+      "f1": 0.896924937186335,
+      "gap": 0.08505208333333332
+    },
+    {
+      "name": "tf_noidf",
+      "seed": 11003,
+      "accuracy": 0.8913541666666667,
+      "f1": 0.8957592598030469,
+      "gap": 0.08250000000000002
+    },
+    {
+      "name": "connector_l1",
+      "seed": 11003,
+      "accuracy": 0.8978125,
+      "f1": 0.9021185872204437,
+      "gap": 0.09151041666666666
+    },
+    {
+      "name": "logistic_l1",
+      "seed": 11003,
+      "accuracy": 0.8920833333333333,
+      "f1": 0.8961965783162079,
+      "gap": 0.06682291666666666
+    }
+  ],
+  "input_sha256": {
+    "data/train.csv": "ae6867261512451d67b7d18a9d6f37529cf1475bdf6c7407f5b01be82bc4c378",
+    "data/eval.csv": "c9aedcb94bc2a50c185fcd8b30b9853f061f234c9fe54f6befb3be8043f0217e",
+    "data/sample_submission.csv": "487528908bc0bb008a74aeabaa0faf994a450da89c13426783d47f692299110b"
+  },
+  "versions": {
+    "python": "3.14.7 (main, Aug  5 2026, 10:29:49) [Clang 21.0.0 (clang-2100.1.1.101)]",
+    "sklearn": "1.9.1",
+    "numpy": "2.5.3",
+    "pandas": "3.0.6",
+    "joblib": "1.6.0"
+  },
+  "public010": 0.89777,
+  "public011": null,
+  "local_test_used_for_selection": false,
+  "decision": "Conservar010: ninguna candidata supera los criterios. No crear un envío equivalente ni bajar umbrales a posteriori.",
+  "old_artifacts_unchanged": true,
+  "elapsed_seconds": 549.7786814589999,
+  "source_sha256": {
+    "src/experimento_011b.py": "5bf4915901aa2a7e53fc45df3141080dfded23e802a76e271d7b1e61e2ebd3f0",
+    "src/modelos_011b.py": "93ad432001896cd47d1a7b556aa84c1e8fb6b478d1f751d2841b03acb2609f0d",
+    "src/modelos_008b.py": "71774e20c9b62a8f63310156b6d498165168d99dd82980919d9d9481c93f5d91",
+    "src/features_007b.py": "32168dc3045b8b146e3260ddfb8b04c3153e1210ade017050ec2243fe7c3daa3",
+    "reports/particiones.csv": "d90cbd30a92a366298a66f2322df4869694798392f19b9c0978dbecac104a931"
+  }
+}

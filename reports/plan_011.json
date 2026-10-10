@@ -1,0 +1,25 @@
+{
+  "candidates": [
+    "ref009",
+    "l1_global13",
+    "l1_edgebig",
+    "l1_charwb",
+    "l1_min2"
+  ],
+  "fresh_seeds": [
+    2203,
+    3307,
+    4409
+  ],
+  "historical_seed": 137,
+  "metric": "f1_macro; labels explícitos; zero_division=0",
+  "gates": [
+    "ganar >=7 de 9 folds emparejados frente a ref009 (3 semillas nuevas)",
+    "delta medio F1 macro OOF >= 0.003",
+    "brecha media <= brecha media de ref009",
+    "no perder F1 OOF frente a ref009 en semilla histórica 137"
+  ],
+  "hypothesis": "Bajo L1, rasgos que fallaron bajo L2 (trigramas globales, bigramas de borde, caracteres, rasgos raros) pueden ser podados selectivamente y aportar señal sin la memorización que los perjudicaba.",
+  "limitations": "Las semillas nuevas no crean datos vírgenes; todos los scores se usan para esta decisión pre-registrada, no son evaluación externa independiente.",
+  "reference_public009": 0.89555
+}

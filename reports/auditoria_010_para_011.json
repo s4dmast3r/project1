@@ -1,0 +1,16 @@
+{
+  "source_experiment": "src/experimento_013.py",
+  "classifier": "LinearSVC penalty=l1 C=2 dual=False",
+  "nonzero_coefficients": 5491,
+  "hashes": {
+    "src/experimento_013.py": true,
+    "src/features_007b.py": true,
+    "reports/particiones.csv": true,
+    "models/modelo_010.joblib": true,
+    "submissions/submission_010.csv": true
+  },
+  "reloaded_predictions_match_csv": true,
+  "metric_authorization": "Accuracy como principal y F1 macro como control: respuesta explícita del usuario en este chat",
+  "public_score": 0.89777,
+  "source_public_score": "Captura del usuario"
+}

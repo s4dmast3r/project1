@@ -1,0 +1,267 @@
+{
+  "plan": {
+    "candidates": [
+      "ref007",
+      "l1_c1",
+      "charwb",
+      "nbsvm_word"
+    ],
+    "fresh_seeds": [
+      1009,
+      2027,
+      3053
+    ],
+    "historical_seed": 137,
+    "metric": "f1_macro; labels explícitos; zero_division=0",
+    "gates": [
+      "ganar >=7 de 9 folds emparejados frente a ref007 (3 semillas nuevas)",
+      "delta medio F1 macro OOF >= 0.003",
+      "brecha media <= brecha media de ref007",
+      "no perder F1 OOF frente a ref007 en semilla histórica 137"
+    ],
+    "strategies": "L1 (selección de rasgos), canal char_wb 2-6 (morfología/ortografía), NB-SVM (re-ponderación NB + logística). Diferentes de la ponderación de tercios (008) y de negación/contraste/regularización C (007).",
+    "limitations": "Las semillas nuevas no crean datos vírgenes. Todos los scores de las semillas nuevas se usan para esta decisión pre-registrada; no son una evaluación externa independiente.",
+    "reference_public007": 0.88888
+  },
+  "seed_rows": [
+    {
+      "name": "l1_c1",
+      "seed": 1009,
+      "ref007_oof": 0.8763224038672419,
+      "cand_oof": 0.900601158722517,
+      "oof_delta": 0.024278754855275086,
+      "fold_wins": 3,
+      "gap_ref": 0.12334975267961572,
+      "gap_cand": 0.05768875511534718,
+      "gap_delta": -0.06566099756426855,
+      "fold_deltas": [
+        0.02459,
+        0.02595,
+        0.02234
+      ]
+    },
+    {
+      "name": "charwb",
+      "seed": 1009,
+      "ref007_oof": 0.8763224038672419,
+      "cand_oof": 0.8779604435851952,
+      "oof_delta": 0.001638039717953288,
+      "fold_wins": 3,
+      "gap_ref": 0.12334975267961572,
+      "gap_cand": 0.1219029462255616,
+      "gap_delta": -0.0014468064540541226,
+      "fold_deltas": [
+        0.00294,
+        0.0009,
+        0.0011
+      ]
+    },
+    {
+      "name": "nbsvm_word",
+      "seed": 1009,
+      "ref007_oof": 0.8763224038672419,
+      "cand_oof": 0.7054263831645704,
+      "oof_delta": -0.17089602070267151,
+      "fold_wins": 0,
+      "gap_ref": 0.12334975267961572,
+      "gap_cand": 0.11549592255172543,
+      "gap_delta": -0.007853830127890288,
+      "fold_deltas": [
+        -0.17382,
+        -0.17523,
+        -0.16358
+      ]
+    },
+    {
+      "name": "l1_c1",
+      "seed": 2027,
+      "ref007_oof": 0.8758428673882523,
+      "cand_oof": 0.8993230204906103,
+      "oof_delta": 0.02348015310235796,
+      "fold_wins": 3,
+      "gap_ref": 0.12385921349714828,
+      "gap_cand": 0.05964326246590498,
+      "gap_delta": -0.0642159510312433,
+      "fold_deltas": [
+        0.01815,
+        0.02434,
+        0.02793
+      ]
+    },
+    {
+      "name": "charwb",
+      "seed": 2027,
+      "ref007_oof": 0.8758428673882523,
+      "cand_oof": 0.8735922503456789,
+      "oof_delta": -0.002250617042573455,
+      "fold_wins": 1,
+      "gap_ref": 0.12385921349714828,
+      "gap_cand": 0.12626148895486067,
+      "gap_delta": 0.002402275457712391,
+      "fold_deltas": [
+        -0.00458,
+        0.00159,
+        -0.00377
+      ]
+    },
+    {
+      "name": "nbsvm_word",
+      "seed": 2027,
+      "ref007_oof": 0.8758428673882523,
+      "cand_oof": 0.7134286636968227,
+      "oof_delta": -0.16241420369142967,
+      "fold_wins": 0,
+      "gap_ref": 0.12385921349714828,
+      "gap_cand": 0.10688615166815008,
+      "gap_delta": -0.0169730618289982,
+      "fold_deltas": [
+        -0.17111,
+        -0.15642,
+        -0.15976
+      ]
+    },
+    {
+      "name": "l1_c1",
+      "seed": 3053,
+      "ref007_oof": 0.8781451319210714,
+      "cand_oof": 0.9020164371107985,
+      "oof_delta": 0.023871305189727132,
+      "fold_wins": 3,
+      "gap_ref": 0.12146322656493953,
+      "gap_cand": 0.05450981260816105,
+      "gap_delta": -0.06695341395677848,
+      "fold_deltas": [
+        0.02499,
+        0.0173,
+        0.02933
+      ]
+    },
+    {
+      "name": "charwb",
+      "seed": 3053,
+      "ref007_oof": 0.8781451319210714,
+      "cand_oof": 0.8761567054832265,
+      "oof_delta": -0.0019884264378448036,
+      "fold_wins": 0,
+      "gap_ref": 0.12146322656493953,
+      "gap_cand": 0.12376728521877318,
+      "gap_delta": 0.0023040586538336516,
+      "fold_deltas": [
+        -0.00231,
+        -0.00355,
+        -0.00016
+      ]
+    },
+    {
+      "name": "nbsvm_word",
+      "seed": 3053,
+      "ref007_oof": 0.8781451319210714,
+      "cand_oof": 0.7156690682979959,
+      "oof_delta": -0.16247606362307543,
+      "fold_wins": 0,
+      "gap_ref": 0.12146322656493953,
+      "gap_cand": 0.10428550364505489,
+      "gap_delta": -0.017177722919884647,
+      "fold_deltas": [
+        -0.16149,
+        -0.17024,
+        -0.1558
+      ]
+    }
+  ],
+  "checks": [
+    {
+      "name": "l1_c1",
+      "fold_wins": 9,
+      "mean_oof_delta": 0.023876737715786727,
+      "mean_gap_delta": -0.06561012085076344,
+      "passes_fresh": true
+    },
+    {
+      "name": "charwb",
+      "fold_wins": 4,
+      "mean_oof_delta": -0.0008670012541549902,
+      "mean_gap_delta": 0.0010865092191639735,
+      "passes_fresh": false
+    },
+    {
+      "name": "nbsvm_word",
+      "fold_wins": 0,
+      "mean_oof_delta": -0.16526209600572553,
+      "mean_gap_delta": -0.014001538292257712,
+      "passes_fresh": false
+    }
+  ],
+  "historical_137": {
+    "l1_c1": {
+      "ref007_137": 0.8778223683005089,
+      "cand_137": 0.8990913974695345,
+      "passes": true
+    }
+  },
+  "winner": "l1_c1",
+  "submission_created": true,
+  "reference_public007": 0.88888,
+  "artifacts_sha256": {
+    "models/modelo_009.joblib": "38e0c8b4e0c4fb45b4e71a9fdf78ec804ef44da5804c41c9b6e5dac6b4a8c15e",
+    "submissions/submission_009.csv": "a45bb390daa8637cc8e18817df19e7c1381ccce2a3fa20a8eccf352079b41b77"
+  },
+  "per_class": {
+    "negativo": {
+      "precision": 0.867833433916717,
+      "recall": 0.8534124629080119,
+      "f1-score": 0.8605625374027528,
+      "support": 3370.0
+    },
+    "neutral": {
+      "precision": 0.9743939911232502,
+      "recall": 0.9975533030408948,
+      "f1-score": 0.9858376511226252,
+      "support": 2861.0
+    },
+    "positivo": {
+      "precision": 0.861185582365207,
+      "recall": 0.8581181359453844,
+      "f1-score": 0.8596491228070176,
+      "support": 3369.0
+    },
+    "macro avg": {
+      "precision": 0.901137669135058,
+      "recall": 0.9030279672980971,
+      "f1-score": 0.9020164371107985,
+      "support": 9600.0
+    },
+    "weighted avg": {
+      "precision": 0.8972577195720142,
+      "recall": 0.8980208333333334,
+      "f1-score": 0.8975765797547863,
+      "support": 9600.0
+    }
+  },
+  "confusion": [
+    [
+      2876,
+      31,
+      463
+    ],
+    [
+      4,
+      2854,
+      3
+    ],
+    [
+      434,
+      44,
+      2891
+    ]
+  ],
+  "csv_checks_passed": true,
+  "decision": "l1_c1 aprobada por las puertas pre-registradas; submission_009.csv generado.",
+  "elapsed_seconds": 306.07143887500024,
+  "source_sha256": {
+    "src/experimento_009.py": "48a30e533edb77d875d852576aa008f7f839f3e4486abb0f31c54002e48f831e",
+    "src/features_009.py": "20f5a680346548268f26de735f601df8956844514116fe172e4d0b43b92d20cf",
+    "src/features_007b.py": "32168dc3045b8b146e3260ddfb8b04c3153e1210ade017050ec2243fe7c3daa3",
+    "reports/particiones.csv": "d90cbd30a92a366298a66f2322df4869694798392f19b9c0978dbecac104a931"
+  }
+}

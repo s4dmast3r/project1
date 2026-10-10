@@ -1,0 +1,24 @@
+{
+  "candidates": [
+    "ref011",
+    "poly_300",
+    "poly_500"
+  ],
+  "fresh_seeds": [
+    16007,
+    17011,
+    18013
+  ],
+  "historical_seed": 137,
+  "metric": "accuracy primaria; F1 macro control; brecha diagnóstico",
+  "gates": [
+    "ganar >=7/9 folds accuracy vs ref011",
+    "delta medio accuracy >= 0.001",
+    "delta F1 medio >= 0",
+    "aumento brecha accuracy media <= 0.005",
+    "no perder accuracy ni F1 en 137"
+  ],
+  "idea": "interacciones polinómicas grado 2 (interaction_only) sobre las k rasgos L1 más discriminativos; selección dentro de cada fold.",
+  "limitations": "Las semillas nuevas no crean datos vírgenes; selección acumulada sobre desarrollo. Interacciones pueden sobreajustar.",
+  "reference_public011": 0.89888
+}

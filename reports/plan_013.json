@@ -1,0 +1,29 @@
+{
+  "candidates": [
+    "ref009",
+    "l1_c15",
+    "l1_c2",
+    "l1_c3"
+  ],
+  "C_values": {
+    "ref009": 1.0,
+    "l1_c15": 1.5,
+    "l1_c2": 2.0,
+    "l1_c3": 3.0
+  },
+  "fresh_seeds": [
+    8803,
+    9901,
+    11003
+  ],
+  "historical_seed": 137,
+  "metric": "accuracy (oficial confirmada); F1 macro y brecha como secundarias",
+  "gates": [
+    "ganar >=7 de 9 folds emparejados frente a ref009 (3 semillas nuevas)",
+    "delta medio de accuracy >= 0.003",
+    "no perder accuracy frente a ref009 en semilla histórica 137"
+  ],
+  "note_gap": "La brecha se reporta como diagnóstico de sobreajuste; un aumento se evalúa explícitamente en la decisión final.",
+  "limitations": "Las semillas nuevas no crean datos vírgenes; todos los scores se usan para esta decisión pre-registrada.",
+  "reference_public009": 0.89555
+}

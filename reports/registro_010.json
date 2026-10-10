@@ -1,0 +1,262 @@
+{
+  "plan": {
+    "candidates": [
+      "ref009",
+      "l1_c05",
+      "l1_c15",
+      "l1_c2",
+      "l2_c1"
+    ],
+    "fresh_seeds": [
+      5003,
+      6007,
+      7001
+    ],
+    "historical_seed": 137,
+    "metric": "f1_macro; labels explícitos; zero_division=0",
+    "gates": [
+      "ganar >=7 de 9 folds emparejados frente a ref009 (3 semillas nuevas)",
+      "delta medio F1 macro OOF >= 0.003",
+      "brecha media <= brecha media de ref009",
+      "no perder F1 OOF frente a ref009 en semilla histórica 137"
+    ],
+    "control_l2": "l2_c1 separa el efecto de C del efecto de L1.",
+    "limitations": "Las semillas nuevas no crean datos vírgenes; todos los scores se usan para esta decisión pre-registrada, no son evaluación externa independiente.",
+    "reference_public009": 0.89555
+  },
+  "seed_rows": [
+    {
+      "name": "l1_c05",
+      "seed": 5003,
+      "ref009_oof": 0.9057447333868095,
+      "cand_oof": 0.8865241511631613,
+      "oof_delta": -0.019220582223648197,
+      "fold_wins": 0,
+      "gap_ref": 0.051448302793804634,
+      "gap_cand": 0.03604223580201138,
+      "gap_delta": -0.015406066991793255,
+      "fold_deltas": [
+        -0.01949,
+        -0.02139,
+        -0.01681
+      ]
+    },
+    {
+      "name": "l1_c15",
+      "seed": 5003,
+      "ref009_oof": 0.9057447333868095,
+      "cand_oof": 0.9062500099967324,
+      "oof_delta": 0.0005052766099229444,
+      "fold_wins": 2,
+      "gap_ref": 0.051448302793804634,
+      "gap_cand": 0.07042368446995684,
+      "gap_delta": 0.018975381676152203,
+      "fold_deltas": [
+        0.00083,
+        -0.00012,
+        0.0008
+      ]
+    },
+    {
+      "name": "l1_c2",
+      "seed": 5003,
+      "ref009_oof": 0.9057447333868095,
+      "cand_oof": 0.9069709016089714,
+      "oof_delta": 0.0012261682221619274,
+      "fold_wins": 2,
+      "gap_ref": 0.051448302793804634,
+      "gap_cand": 0.08138850368716229,
+      "gap_delta": 0.029940200893357652,
+      "fold_deltas": [
+        0.00069,
+        -3e-05,
+        0.00301
+      ]
+    },
+    {
+      "name": "l2_c1",
+      "seed": 5003,
+      "ref009_oof": 0.9057447333868095,
+      "cand_oof": 0.8766730908229903,
+      "oof_delta": -0.029071642563819222,
+      "fold_wins": 0,
+      "gap_ref": 0.051448302793804634,
+      "gap_cand": 0.12023446045696855,
+      "gap_delta": 0.06878615766316391,
+      "fold_deltas": [
+        -0.03238,
+        -0.03148,
+        -0.02341
+      ]
+    },
+    {
+      "name": "l1_c05",
+      "seed": 6007,
+      "ref009_oof": 0.9003463585642417,
+      "cand_oof": 0.8822625213402607,
+      "oof_delta": -0.018083837223980992,
+      "fold_wins": 0,
+      "gap_ref": 0.05839924251788009,
+      "gap_cand": 0.043044472101244624,
+      "gap_delta": -0.015354770416635466,
+      "fold_deltas": [
+        -0.01659,
+        -0.01787,
+        -0.01978
+      ]
+    },
+    {
+      "name": "l1_c15",
+      "seed": 6007,
+      "ref009_oof": 0.9003463585642417,
+      "cand_oof": 0.9029776031226087,
+      "oof_delta": 0.002631244558366941,
+      "fold_wins": 3,
+      "gap_ref": 0.05839924251788009,
+      "gap_cand": 0.07459150610732694,
+      "gap_delta": 0.01619226358944685,
+      "fold_deltas": [
+        0.00338,
+        0.00106,
+        0.00345
+      ]
+    },
+    {
+      "name": "l1_c2",
+      "seed": 6007,
+      "ref009_oof": 0.9003463585642417,
+      "cand_oof": 0.9006531267192189,
+      "oof_delta": 0.00030676815497721055,
+      "fold_wins": 1,
+      "gap_ref": 0.05839924251788009,
+      "gap_cand": 0.08822799860681411,
+      "gap_delta": 0.029828756088934025,
+      "fold_deltas": [
+        -0.00012,
+        -0.00126,
+        0.0023
+      ]
+    },
+    {
+      "name": "l2_c1",
+      "seed": 6007,
+      "ref009_oof": 0.9003463585642417,
+      "cand_oof": 0.8729746160546276,
+      "oof_delta": -0.02737174250961416,
+      "fold_wins": 0,
+      "gap_ref": 0.05839924251788009,
+      "gap_cand": 0.12362259483244431,
+      "gap_delta": 0.06522335231456422,
+      "fold_deltas": [
+        -0.02723,
+        -0.03146,
+        -0.02344
+      ]
+    },
+    {
+      "name": "l1_c05",
+      "seed": 7001,
+      "ref009_oof": 0.8975339896745509,
+      "cand_oof": 0.8825266737101609,
+      "oof_delta": -0.015007315964389978,
+      "fold_wins": 0,
+      "gap_ref": 0.06019480333759394,
+      "gap_cand": 0.042226969362129184,
+      "gap_delta": -0.017967833975464753,
+      "fold_deltas": [
+        -0.01279,
+        -0.01477,
+        -0.01737
+      ]
+    },
+    {
+      "name": "l1_c15",
+      "seed": 7001,
+      "ref009_oof": 0.8975339896745509,
+      "cand_oof": 0.8994153030697678,
+      "oof_delta": 0.0018813133952169103,
+      "fold_wins": 3,
+      "gap_ref": 0.06019480333759394,
+      "gap_cand": 0.07857383640108573,
+      "gap_delta": 0.01837903306349179,
+      "fold_deltas": [
+        0.002,
+        0.00295,
+        0.0007
+      ]
+    },
+    {
+      "name": "l1_c2",
+      "seed": 7001,
+      "ref009_oof": 0.8975339896745509,
+      "cand_oof": 0.9017056893101856,
+      "oof_delta": 0.004171699635634685,
+      "fold_wins": 3,
+      "gap_ref": 0.06019480333759394,
+      "gap_cand": 0.08752747143658546,
+      "gap_delta": 0.02733266809899152,
+      "fold_deltas": [
+        0.0063,
+        0.00185,
+        0.00436
+      ]
+    },
+    {
+      "name": "l2_c1",
+      "seed": 7001,
+      "ref009_oof": 0.8975339896745509,
+      "cand_oof": 0.8725639357225909,
+      "oof_delta": -0.024970053951959947,
+      "fold_wins": 0,
+      "gap_ref": 0.06019480333759394,
+      "gap_cand": 0.12457158861818403,
+      "gap_delta": 0.0643767852805901,
+      "fold_deltas": [
+        -0.02037,
+        -0.0292,
+        -0.02535
+      ]
+    }
+  ],
+  "checks": [
+    {
+      "name": "l1_c05",
+      "fold_wins": 0,
+      "mean_oof_delta": -0.017437245137339723,
+      "mean_gap_delta": -0.016242890461297826,
+      "passes_fresh": false
+    },
+    {
+      "name": "l1_c15",
+      "fold_wins": 8,
+      "mean_oof_delta": 0.0016726115211689319,
+      "mean_gap_delta": 0.017848892776363614,
+      "passes_fresh": false
+    },
+    {
+      "name": "l1_c2",
+      "fold_wins": 6,
+      "mean_oof_delta": 0.0019015453375912743,
+      "mean_gap_delta": 0.029033875027094397,
+      "passes_fresh": false
+    },
+    {
+      "name": "l2_c1",
+      "fold_wins": 0,
+      "mean_oof_delta": -0.027137813008464445,
+      "mean_gap_delta": 0.06612876508610609,
+      "passes_fresh": false
+    }
+  ],
+  "historical_137": {},
+  "winner": null,
+  "submission_created": false,
+  "reference_public009": 0.89555,
+  "decision": "Conservar009: ninguna candidata cumple las cuatro puertas pre-registradas. No generar CSV.",
+  "elapsed_seconds": 353.4884835419998,
+  "source_sha256": {
+    "src/experimento_010.py": "593a7fb706731956f01fd5ecd1916bb0ab30a68fcfd241a70c5227a5fc77e6db",
+    "src/features_007b.py": "32168dc3045b8b146e3260ddfb8b04c3153e1210ade017050ec2243fe7c3daa3",
+    "reports/particiones.csv": "d90cbd30a92a366298a66f2322df4869694798392f19b9c0978dbecac104a931"
+  }
+}

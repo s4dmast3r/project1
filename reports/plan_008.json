@@ -1,0 +1,29 @@
+{
+  "candidates": [
+    "ref007",
+    "split_w1",
+    "split_w05",
+    "split_w15"
+  ],
+  "weights": {
+    "split_w1": 1.0,
+    "split_w05": 0.5,
+    "split_w15": 1.5
+  },
+  "fresh_seeds": [
+    711,
+    1237,
+    2003
+  ],
+  "historical_seed": 137,
+  "metric": "f1_macro; labels explícitos; zero_division=0",
+  "gates": [
+    "ganar >=7 de 9 folds emparejados frente a ref007 (3 semillas nuevas)",
+    "delta medio F1 macro OOF >= 0.003",
+    "brecha media <= brecha media de ref007",
+    "no perder F1 OOF frente a ref007 en semilla histórica 137"
+  ],
+  "excluded": "Las variantes suave (triangular) y de identidad del conector requieren implementación y controles adicionales; se dejan para una ronda posterior fijada de antemano, no se introducen tras ver estos resultados.",
+  "limitations": "Las semillas nuevas no crean datos vírgenes; el desarrollo se ha explorado en muchas rondas. Todos los scores de las semillas nuevas se usan para esta decisión pre-registrada; no son una evaluación externa independiente.",
+  "reference_public007": 0.88888
+}

@@ -1,0 +1,262 @@
+{
+  "plan": {
+    "seeds": [
+      271,
+      599,
+      913
+    ],
+    "folds_per_seed": 3,
+    "candidates": [
+      "ref005",
+      "neg_scope",
+      "post_contraste",
+      "c1_min5"
+    ],
+    "metric": "f1_macro; labels explícitos; zero_division=0",
+    "selection": "Cada semilla: delta F1 OOF >=0.005 vs005 y ganar 3 folds o >=2 con menor brecha media. Debe cumplir las tres semillas. Luego no perder F1 OOF en semilla histórica137. Entre aprobados mayor F1 medio en semillas nuevas; empate exacto menor brecha.",
+    "historical_validation": "137 se usa como puerta de selección adicional, no prueba independiente.",
+    "data_scope": "9600 filas de desarrollo histórico. Prueba local antigua excluida de selección.",
+    "extra_features": {
+      "scope_tokens": 3,
+      "negators": [
+        "no",
+        "nunca",
+        "sin",
+        "ni",
+        "jamas",
+        "tampoco"
+      ],
+      "contrast": [
+        "pero",
+        "aunque",
+        "sin embargo"
+      ],
+      "extra_weight": 0.35,
+      "extra_min_df": 3,
+      "extra_max_features": 30000,
+      "ngram_range": [
+        1,
+        2
+      ]
+    },
+    "limitations": "Cambiar semillas no crea datos vírgenes. 271 ya se usó dentro de stacking006. Todos estos scores se usan para selección, no son evaluación externa independiente.",
+    "budget": "36 ajustes de screening; hasta12 históricos condicionales; un ajuste final solo si aprobado",
+    "n_jobs": 1
+  },
+  "winner": null,
+  "submission_created": false,
+  "criteria": [
+    {
+      "name": "neg_scope",
+      "seed": 271,
+      "f1_gain": -0.0011002772537419547,
+      "folds_won": 1,
+      "gap_change": 0.0011032945430841934,
+      "passes": false
+    },
+    {
+      "name": "neg_scope",
+      "seed": 599,
+      "f1_gain": -9.937245153468499e-05,
+      "folds_won": 2,
+      "gap_change": 0.00024300111111269507,
+      "passes": false
+    },
+    {
+      "name": "neg_scope",
+      "seed": 913,
+      "f1_gain": -0.0013207203619916008,
+      "folds_won": 0,
+      "gap_change": 0.0013566120413102817,
+      "passes": false
+    },
+    {
+      "name": "post_contraste",
+      "seed": 271,
+      "f1_gain": -0.00036222594438217737,
+      "folds_won": 1,
+      "gap_change": 0.00040902517515917225,
+      "passes": false
+    },
+    {
+      "name": "post_contraste",
+      "seed": 599,
+      "f1_gain": -0.002963120661885421,
+      "folds_won": 0,
+      "gap_change": 0.0030118118319984455,
+      "passes": false
+    },
+    {
+      "name": "post_contraste",
+      "seed": 913,
+      "f1_gain": 0.0013082191755408035,
+      "folds_won": 3,
+      "gap_change": -0.0013049932536527004,
+      "passes": false
+    },
+    {
+      "name": "c1_min5",
+      "seed": 271,
+      "f1_gain": 0.0009926469276648753,
+      "folds_won": 2,
+      "gap_change": -0.005590440978202785,
+      "passes": false
+    },
+    {
+      "name": "c1_min5",
+      "seed": 599,
+      "f1_gain": -0.001093870000257846,
+      "folds_won": 0,
+      "gap_change": -0.0025591494370295897,
+      "passes": false
+    },
+    {
+      "name": "c1_min5",
+      "seed": 913,
+      "f1_gain": -0.0015826020463721724,
+      "folds_won": 0,
+      "gap_change": -0.0029047549771004794,
+      "passes": false
+    }
+  ],
+  "historical": {},
+  "seed_results": [
+    {
+      "name": "ref005",
+      "seed": 271,
+      "oof_f1": 0.8743984350233238,
+      "fold_mean": 0.8743891715254616,
+      "fold_std": 0.0018156805107497774,
+      "train_mean": 0.9996042897247165,
+      "gap": 0.12521511819925502
+    },
+    {
+      "name": "neg_scope",
+      "seed": 271,
+      "oof_f1": 0.8732981577695819,
+      "fold_mean": 0.8732858769823774,
+      "fold_std": 0.0009921385086253023,
+      "train_mean": 0.9996042897247165,
+      "gap": 0.1263184127423392
+    },
+    {
+      "name": "post_contraste",
+      "seed": 271,
+      "oof_f1": 0.8740362090789416,
+      "fold_mean": 0.8740296060035901,
+      "fold_std": 0.0008992274891100701,
+      "train_mean": 0.9996537493780043,
+      "gap": 0.1256241433744142
+    },
+    {
+      "name": "c1_min5",
+      "seed": 271,
+      "oof_f1": 0.8753910819509887,
+      "fold_mean": 0.8753794923986938,
+      "fold_std": 0.001120605380468808,
+      "train_mean": 0.995004169619746,
+      "gap": 0.11962467722105223
+    },
+    {
+      "name": "ref005",
+      "seed": 599,
+      "oof_f1": 0.8718374821328979,
+      "fold_mean": 0.8718395855685613,
+      "fold_std": 0.003721704728897218,
+      "train_mean": 0.9995548300518281,
+      "gap": 0.12771524448326674
+    },
+    {
+      "name": "neg_scope",
+      "seed": 599,
+      "oof_f1": 0.8717381096813632,
+      "fold_mean": 0.8717449854385325,
+      "fold_std": 0.004181784282219724,
+      "train_mean": 0.9997032310329118,
+      "gap": 0.12795824559437943
+    },
+    {
+      "name": "post_contraste",
+      "seed": 599,
+      "oof_f1": 0.8688743614710125,
+      "fold_mean": 0.8688772444078144,
+      "fold_std": 0.0018954295702535567,
+      "train_mean": 0.9996043007230796,
+      "gap": 0.13072705631526518
+    },
+    {
+      "name": "c1_min5",
+      "seed": 599,
+      "oof_f1": 0.8707436121326401,
+      "fold_mean": 0.8707383976076541,
+      "fold_std": 0.0037088559826104674,
+      "train_mean": 0.9958944926538913,
+      "gap": 0.12515609504623715
+    },
+    {
+      "name": "ref005",
+      "seed": 913,
+      "oof_f1": 0.8763478749269814,
+      "fold_mean": 0.876280996869616,
+      "fold_std": 0.0008683815201094539,
+      "train_mean": 0.9995548190289743,
+      "gap": 0.12327382215935823
+    },
+    {
+      "name": "neg_scope",
+      "seed": 913,
+      "oof_f1": 0.8750271545649898,
+      "fold_mean": 0.8749738664930103,
+      "fold_std": 0.0008785009092406614,
+      "train_mean": 0.9996043006936789,
+      "gap": 0.12463043420066851
+    },
+    {
+      "name": "post_contraste",
+      "seed": 913,
+      "oof_f1": 0.8776560941025222,
+      "fold_mean": 0.8775859901232687,
+      "fold_std": 0.0017363436599499376,
+      "train_mean": 0.9995548190289743,
+      "gap": 0.12196882890570553
+    },
+    {
+      "name": "c1_min5",
+      "seed": 913,
+      "oof_f1": 0.8747652728806092,
+      "fold_mean": 0.8746845896335792,
+      "fold_std": 0.0011560574202255601,
+      "train_mean": 0.9950536568158369,
+      "gap": 0.12036906718225775
+    }
+  ],
+  "reference_public005": 0.88111,
+  "public006": "aproximadamente0.87 según documento del auditor; no se aportó valor exacto/captura en este turno",
+  "public007": null,
+  "input_sha256": {
+    "data/train.csv": "ae6867261512451d67b7d18a9d6f37529cf1475bdf6c7407f5b01be82bc4c378",
+    "data/eval.csv": "c9aedcb94bc2a50c185fcd8b30b9853f061f234c9fe54f6befb3be8043f0217e",
+    "data/sample_submission.csv": "487528908bc0bb008a74aeabaa0faf994a450da89c13426783d47f692299110b"
+  },
+  "versions": {
+    "scikit-learn": "1.9.1",
+    "pandas": "3.0.6",
+    "numpy": "2.5.3",
+    "joblib": "1.6.0",
+    "matplotlib": "3.11.2",
+    "nbformat": "5.11.1",
+    "nbclient": "0.11.0",
+    "ipykernel": "7.4.0"
+  },
+  "local_test_reused": false,
+  "evaluation_type": "CV repetida usada para selección; no evaluación externa independiente",
+  "decision": "Conservar005: ninguna candidata cumple todos los criterios previos. No generar un CSV equivalente ni reducir los umbrales después de observar resultados.",
+  "old_artifacts_unchanged": true,
+  "elapsed_seconds": 159.0833057499999,
+  "source_sha256": {
+    "src/experimento_007.py": "2f28fca8337c1e7980cb3976f53fb1dd91f23ccd12d6130463a9928b24215b59",
+    "src/features_007.py": "11ed5f3526df5b2e775ffe12a0aa5a13a48afdca83d17c7c1344e56f7deb4270",
+    "src/features_004.py": "0295e192394795168bffcb3fbd53059d045b35261ab39b2d868671cdba4f641a",
+    "reports/particiones.csv": "d90cbd30a92a366298a66f2322df4869694798392f19b9c0978dbecac104a931"
+  }
+}

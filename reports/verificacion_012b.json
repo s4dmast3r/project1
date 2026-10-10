@@ -1,0 +1,9 @@
+{
+  "pipeline_fits_cv": 45,
+  "oof_metrics_recomputed": 15,
+  "only_development_in_oof": true,
+  "hashes_match": true,
+  "reference_wrapper_matches_csv011": true,
+  "specialists_preserve_neutral_gate": true,
+  "submission_created": false
+}

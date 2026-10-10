@@ -1,0 +1,19 @@
+{
+  "pipeline_fits_cv": 63,
+  "oof_scores_recomputed": 21,
+  "development_only": true,
+  "hashes_match": true,
+  "fresh_model_reload_matches_csv": true,
+  "submission_rows": 3000,
+  "changed_predictions_vs007": 224,
+  "class_counts": {
+    "positivo": 1128,
+    "negativo": 1035,
+    "neutral": 837
+  },
+  "final_iterations": [
+    230,
+    47,
+    164
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "submission": "submission_006.csv",
+  "exact_public_score": null,
+  "approximate_score_text": "~0.87",
+  "source": "reports/revision_006_y_plan_007.md, aportado por el usuario",
+  "screenshot_verified_in_this_turn": false,
+  "note": "No se transforma una cifra aproximada en un resultado exacto. La causa de la caída no está demostrada por este dato.",
+  "agent_accessed_platform": false
+}

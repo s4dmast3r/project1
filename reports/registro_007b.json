@@ -1,0 +1,308 @@
+{
+  "plan": {
+    "seeds": [
+      271,
+      599,
+      913
+    ],
+    "folds_per_seed": 3,
+    "candidates": [
+      "ref005",
+      "global13",
+      "mid_bucket",
+      "edge_bigrams",
+      "thirds"
+    ],
+    "params": {
+      "ref005": {},
+      "global13": {
+        "global_max_ngram": 3
+      },
+      "mid_bucket": {
+        "mid_bucket": true
+      },
+      "edge_bigrams": {
+        "edge_bigrams": true
+      },
+      "thirds": {
+        "thirds": true
+      }
+    },
+    "metric": "f1_macro; labels explícitos; zero_division=0",
+    "selection": "Cada semilla: delta F1 OOF >=0.005 vs005 y ganar 3 folds o >=2 con menor brecha media. Debe cumplir las tres semillas. Luego no perder F1 OOF en semilla histórica137. Entre aprobados mayor F1 medio en semillas nuevas; empate exacto menor brecha.",
+    "historical_validation": "137 se usa como puerta de selección adicional, no prueba independiente.",
+    "data_scope": "9600 filas de desarrollo histórico. Prueba local antigua excluida de selección.",
+    "hypotheses": "Cambios estructurales del espacio de características no probados en 003-007: trigramas globales, bucket medio, bigramas de borde, tercios del texto completo.",
+    "clause_dominance_contrast": "FALLO: scorer de cláusulas con supervisión débil (etiqueta de la reseña) coincide con la etiqueta en 49,8% del desarrollo y 17,8% de los errores 005; descartada la agregación por cláusula para esta ronda.",
+    "excluded": "neg_scope/post_contraste/c1_min5 ya probados en 007 sin pasar; stacking 006 cayó en público; sin EM, sin reetiquetado, sin datos externos.",
+    "limitations": "Cambiar semillas no crea datos vírgenes. 271 ya se usó dentro de stacking006. Todos estos scores se usan para selección, no son evaluación externa independiente.",
+    "budget": "45 ajustes de screening; hasta 15 históricos condicionales; un ajuste final solo si aprobado",
+    "n_jobs": 1
+  },
+  "winner": null,
+  "submission_created": false,
+  "criteria": [
+    {
+      "name": "global13",
+      "seed": 271,
+      "f1_gain": -0.009179843782463615,
+      "folds_won": 0,
+      "gap_change": 0.009446294297567492,
+      "passes": false
+    },
+    {
+      "name": "global13",
+      "seed": 599,
+      "f1_gain": -0.007545920110964333,
+      "folds_won": 0,
+      "gap_change": 0.007850467100760372,
+      "passes": false
+    },
+    {
+      "name": "global13",
+      "seed": 913,
+      "f1_gain": -0.007465633463871635,
+      "folds_won": 0,
+      "gap_change": 0.007895075725431328,
+      "passes": false
+    },
+    {
+      "name": "mid_bucket",
+      "seed": 271,
+      "f1_gain": -0.0033896568973424968,
+      "folds_won": 1,
+      "gap_change": 0.003252048840837546,
+      "passes": false
+    },
+    {
+      "name": "mid_bucket",
+      "seed": 599,
+      "f1_gain": -0.0020170612210475003,
+      "folds_won": 0,
+      "gap_change": 0.0020824356141749822,
+      "passes": false
+    },
+    {
+      "name": "mid_bucket",
+      "seed": 913,
+      "f1_gain": -0.002461892270669952,
+      "folds_won": 1,
+      "gap_change": 0.0026603166908823195,
+      "passes": false
+    },
+    {
+      "name": "edge_bigrams",
+      "seed": 271,
+      "f1_gain": -0.006632503507263632,
+      "folds_won": 0,
+      "gap_change": 0.006883810138267749,
+      "passes": false
+    },
+    {
+      "name": "edge_bigrams",
+      "seed": 599,
+      "f1_gain": -0.006151918757163477,
+      "folds_won": 0,
+      "gap_change": 0.006407539967643011,
+      "passes": false
+    },
+    {
+      "name": "edge_bigrams",
+      "seed": 913,
+      "f1_gain": -0.008096199000500959,
+      "folds_won": 0,
+      "gap_change": 0.008394956866585063,
+      "passes": false
+    },
+    {
+      "name": "thirds",
+      "seed": 271,
+      "f1_gain": 0.00405590066090411,
+      "folds_won": 3,
+      "gap_change": -0.004109507658793629,
+      "passes": false
+    },
+    {
+      "name": "thirds",
+      "seed": 599,
+      "f1_gain": 0.002384451190055481,
+      "folds_won": 3,
+      "gap_change": -0.0023309439010168187,
+      "passes": false
+    },
+    {
+      "name": "thirds",
+      "seed": 913,
+      "f1_gain": 0.0020900287783749416,
+      "folds_won": 3,
+      "gap_change": -0.002099045858510687,
+      "passes": false
+    }
+  ],
+  "historical": {},
+  "seed_results": [
+    {
+      "name": "ref005",
+      "seed": 271,
+      "oof_f1": 0.8743984350233238,
+      "fold_mean": 0.8743891715254616,
+      "fold_std": 0.0018156805107497774,
+      "train_mean": 0.9996042897247165,
+      "gap": 0.12521511819925502
+    },
+    {
+      "name": "global13",
+      "seed": 271,
+      "oof_f1": 0.8652185912408602,
+      "fold_mean": 0.8651901975253536,
+      "fold_std": 0.004254082397169262,
+      "train_mean": 0.9998516100221763,
+      "gap": 0.1346614124968225
+    },
+    {
+      "name": "mid_bucket",
+      "seed": 271,
+      "oof_f1": 0.8710087781259813,
+      "fold_mean": 0.8709887327166069,
+      "fold_std": 0.0038527856691187245,
+      "train_mean": 0.9994558997566996,
+      "gap": 0.12846716704009256
+    },
+    {
+      "name": "edge_bigrams",
+      "seed": 271,
+      "oof_f1": 0.8677659315160602,
+      "fold_mean": 0.8677526816895537,
+      "fold_std": 0.0007352378113236068,
+      "train_mean": 0.9998516100270765,
+      "gap": 0.13209892833752276
+    },
+    {
+      "name": "thirds",
+      "seed": 271,
+      "oof_f1": 0.8784543356842279,
+      "fold_mean": 0.8784492085277139,
+      "fold_std": 0.0011391337497176658,
+      "train_mean": 0.9995548190681753,
+      "gap": 0.12110561054046139
+    },
+    {
+      "name": "ref005",
+      "seed": 599,
+      "oof_f1": 0.8718374821328979,
+      "fold_mean": 0.8718395855685613,
+      "fold_std": 0.003721704728897218,
+      "train_mean": 0.9995548300518281,
+      "gap": 0.12771524448326674
+    },
+    {
+      "name": "global13",
+      "seed": 599,
+      "oof_f1": 0.8642915620219336,
+      "fold_mean": 0.8642858984381491,
+      "fold_std": 0.002874338504959645,
+      "train_mean": 0.9998516100221763,
+      "gap": 0.1355657115840271
+    },
+    {
+      "name": "mid_bucket",
+      "seed": 599,
+      "oof_f1": 0.8698204209118504,
+      "fold_mean": 0.8698066096027741,
+      "fold_std": 0.004205276929598844,
+      "train_mean": 0.9996042897002159,
+      "gap": 0.12979768009744172
+    },
+    {
+      "name": "edge_bigrams",
+      "seed": 599,
+      "oof_f1": 0.8656855633757344,
+      "fold_mean": 0.8656793659179787,
+      "fold_std": 0.002574332360017381,
+      "train_mean": 0.9998021503688884,
+      "gap": 0.13412278445090975
+    },
+    {
+      "name": "thirds",
+      "seed": 599,
+      "oof_f1": 0.8742219333229534,
+      "fold_mean": 0.8742199780803853,
+      "fold_std": 0.0021213692885075895,
+      "train_mean": 0.9996042786626353,
+      "gap": 0.12538430058224992
+    },
+    {
+      "name": "ref005",
+      "seed": 913,
+      "oof_f1": 0.8763478749269814,
+      "fold_mean": 0.876280996869616,
+      "fold_std": 0.0008683815201094539,
+      "train_mean": 0.9995548190289743,
+      "gap": 0.12327382215935823
+    },
+    {
+      "name": "global13",
+      "seed": 913,
+      "oof_f1": 0.8688822414631098,
+      "fold_mean": 0.8688311021152105,
+      "fold_std": 0.0007552652502906062,
+      "train_mean": 1.0,
+      "gap": 0.13116889788478955
+    },
+    {
+      "name": "mid_bucket",
+      "seed": 913,
+      "oof_f1": 0.8738859826563115,
+      "fold_mean": 0.8738185408621034,
+      "fold_std": 0.003918316415519283,
+      "train_mean": 0.9997526797123438,
+      "gap": 0.12593413885024055
+    },
+    {
+      "name": "edge_bigrams",
+      "seed": 913,
+      "oof_f1": 0.8682516759264804,
+      "fold_mean": 0.8681828309962331,
+      "fold_std": 0.0024474323625797954,
+      "train_mean": 0.9998516100221763,
+      "gap": 0.1316687790259433
+    },
+    {
+      "name": "thirds",
+      "seed": 913,
+      "oof_f1": 0.8784379037053563,
+      "fold_mean": 0.878380064764031,
+      "fold_std": 0.0013434225441184557,
+      "train_mean": 0.9995548410648785,
+      "gap": 0.12117477630084754
+    }
+  ],
+  "reference_public005": 0.88111,
+  "public006": "aproximadamente0.87 según documento del auditor; sin valor exacto/captura",
+  "public007": null,
+  "input_sha256": {
+    "data/train.csv": "ae6867261512451d67b7d18a9d6f37529cf1475bdf6c7407f5b01be82bc4c378",
+    "data/eval.csv": "c9aedcb94bc2a50c185fcd8b30b9853f061f234c9fe54f6befb3be8043f0217e",
+    "data/sample_submission.csv": "487528908bc0bb008a74aeabaa0faf994a450da89c13426783d47f692299110b"
+  },
+  "versions": {
+    "scikit-learn": "1.9.1",
+    "pandas": "3.0.6",
+    "numpy": "2.5.3",
+    "joblib": "1.6.0",
+    "matplotlib": "3.11.2",
+    "nbformat": "5.11.1",
+    "nbclient": "0.11.0",
+    "ipykernel": "7.4.0"
+  },
+  "local_test_reused": false,
+  "evaluation_type": "CV repetida usada para selección; no evaluación externa independiente",
+  "decision": "Conservar005: ninguna candidata cumple todos los criterios previos. No generar un CSV equivalente ni reducir los umbrales después de observar resultados.",
+  "old_artifacts_unchanged": true,
+  "elapsed_seconds": 206.3409360830001,
+  "source_sha256": {
+    "src/experimento_007b.py": "2ba084b6a6b4a7f1fbb29be6067162dd1829d79c32ce24ae5b965e4b150d32a7",
+    "src/features_007b.py": "32168dc3045b8b146e3260ddfb8b04c3153e1210ade017050ec2243fe7c3daa3",
+    "reports/particiones.csv": "d90cbd30a92a366298a66f2322df4869694798392f19b9c0978dbecac104a931"
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "seeds": [
+    271,
+    599,
+    913
+  ],
+  "folds_per_seed": 3,
+  "candidates": [
+    "ref005",
+    "neg_scope",
+    "post_contraste",
+    "c1_min5"
+  ],
+  "metric": "f1_macro; labels explícitos; zero_division=0",
+  "selection": "Cada semilla: delta F1 OOF >=0.005 vs005 y ganar 3 folds o >=2 con menor brecha media. Debe cumplir las tres semillas. Luego no perder F1 OOF en semilla histórica137. Entre aprobados mayor F1 medio en semillas nuevas; empate exacto menor brecha.",
+  "historical_validation": "137 se usa como puerta de selección adicional, no prueba independiente.",
+  "data_scope": "9600 filas de desarrollo histórico. Prueba local antigua excluida de selección.",
+  "extra_features": {
+    "scope_tokens": 3,
+    "negators": [
+      "no",
+      "nunca",
+      "sin",
+      "ni",
+      "jamas",
+      "tampoco"
+    ],
+    "contrast": [
+      "pero",
+      "aunque",
+      "sin embargo"
+    ],
+    "extra_weight": 0.35,
+    "extra_min_df": 3,
+    "extra_max_features": 30000,
+    "ngram_range": [
+      1,
+      2
+    ]
+  },
+  "limitations": "Cambiar semillas no crea datos vírgenes. 271 ya se usó dentro de stacking006. Todos estos scores se usan para selección, no son evaluación externa independiente.",
+  "budget": "36 ajustes de screening; hasta12 históricos condicionales; un ajuste final solo si aprobado",
+  "n_jobs": 1
+}

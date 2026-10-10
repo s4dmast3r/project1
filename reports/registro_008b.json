@@ -1,0 +1,299 @@
+{
+  "plan": {
+    "seeds": [
+      711,
+      1237,
+      2003
+    ],
+    "folds_per_seed": 3,
+    "candidates": [
+      "ref007",
+      "joint_w05",
+      "joint_w15",
+      "connector_identity",
+      "chi2_50",
+      "nbsvm"
+    ],
+    "metric": "F1 macro exclusivamente",
+    "gates": ">=7/9 folds ganados; delta medio OOF >=0.003; brecha media no mayor; no perder en137. No alterar después de ver resultados.",
+    "budget": "54 ajustes de screening y hasta18 históricos condicionales; sin nuevas rondas adaptativas",
+    "references": "reports/investigacion_008b.md",
+    "limitations": "CV repetida usada para selección. Semillas/datos ya explorados; ninguna prueba nueva.",
+    "hypotheses": "Ponderar tercios en el MISMO TFIDF; chi2 supervisado dentro del fold; conector identificado; NB-SVM multiclase adaptado."
+  },
+  "winner": "nbsvm",
+  "submission_created": true,
+  "criteria": [
+    {
+      "name": "joint_w05",
+      "mean_f1_gain": -0.0020450830772674733,
+      "folds_won": 2,
+      "mean_gap_change": 0.002042699795105967,
+      "passes": false
+    },
+    {
+      "name": "joint_w15",
+      "mean_f1_gain": 0.0005064334769599629,
+      "folds_won": 5,
+      "mean_gap_change": -0.0005062418275200616,
+      "passes": false
+    },
+    {
+      "name": "connector_identity",
+      "mean_f1_gain": -0.00024497922004947564,
+      "folds_won": 4,
+      "mean_gap_change": 0.00043882474783412767,
+      "passes": false
+    },
+    {
+      "name": "chi2_50",
+      "mean_f1_gain": 0.012009089574914533,
+      "folds_won": 9,
+      "mean_gap_change": -0.013310300988777423,
+      "passes": true
+    },
+    {
+      "name": "nbsvm",
+      "mean_f1_gain": 0.015555773686510621,
+      "folds_won": 9,
+      "mean_gap_change": -0.015199081033400988,
+      "passes": true
+    }
+  ],
+  "historical": {
+    "chi2_50": {
+      "candidate": 0.8850143931603528,
+      "reference": 0.8778223683005089,
+      "passes": true
+    },
+    "nbsvm": {
+      "candidate": 0.8889920274199711,
+      "reference": 0.8778223683005089,
+      "passes": true
+    }
+  },
+  "seed_results": [
+    {
+      "name": "ref007",
+      "seed": 711,
+      "oof_f1": 0.8797300294380049,
+      "fold_mean": 0.8797144762738877,
+      "fold_std": 0.004450826672423457,
+      "train_mean": 0.9995548190730755,
+      "gap": 0.11984034279918787
+    },
+    {
+      "name": "joint_w05",
+      "seed": 711,
+      "oof_f1": 0.8768002352585027,
+      "fold_mean": 0.8767877614257698,
+      "fold_std": 0.0019693705974281137,
+      "train_mean": 0.9995548190730755,
+      "gap": 0.12276705764730574
+    },
+    {
+      "name": "joint_w15",
+      "seed": 711,
+      "oof_f1": 0.8787042704767627,
+      "fold_mean": 0.8786861125490427,
+      "fold_std": 0.0027218396374281344,
+      "train_mean": 0.9997032090263921,
+      "gap": 0.1210170964773493
+    },
+    {
+      "name": "connector_identity",
+      "seed": 711,
+      "oof_f1": 0.8785307880555595,
+      "fold_mean": 0.8785187396456201,
+      "fold_std": 0.0037610107210200756,
+      "train_mean": 0.9998021393607317,
+      "gap": 0.12128339971511148
+    },
+    {
+      "name": "chi2_50",
+      "seed": 711,
+      "oof_f1": 0.8899508902342635,
+      "fold_mean": 0.8899308382014718,
+      "fold_std": 0.004288168062503885,
+      "train_mean": 0.998417147405422,
+      "gap": 0.10848630920395023
+    },
+    {
+      "name": "nbsvm",
+      "seed": 711,
+      "oof_f1": 0.8929457703543578,
+      "fold_mean": 0.8929352110047173,
+      "fold_std": 0.005143807250780934,
+      "train_mean": 1.0,
+      "gap": 0.10706478899528278
+    },
+    {
+      "name": "ref007",
+      "seed": 1237,
+      "oof_f1": 0.875045336631866,
+      "fold_mean": 0.8750277104344906,
+      "fold_std": 0.004380708596928546,
+      "train_mean": 0.9996042787312635,
+      "gap": 0.12457656829677295
+    },
+    {
+      "name": "joint_w05",
+      "seed": 1237,
+      "oof_f1": 0.8741379697502719,
+      "fold_mean": 0.8741229609335436,
+      "fold_std": 0.005098818852077683,
+      "train_mean": 0.9996537493878047,
+      "gap": 0.1255307884542611
+    },
+    {
+      "name": "joint_w15",
+      "seed": 1237,
+      "oof_f1": 0.8772239862563537,
+      "fold_mean": 0.8772053656564194,
+      "fold_std": 0.006666265537157145,
+      "train_mean": 0.9996042787312635,
+      "gap": 0.12239891307484407
+    },
+    {
+      "name": "connector_identity",
+      "seed": 1237,
+      "oof_f1": 0.8773279904123115,
+      "fold_mean": 0.8773160549226687,
+      "fold_std": 0.004463818401069359,
+      "train_mean": 0.9998515990189197,
+      "gap": 0.12253554409625082
+    },
+    {
+      "name": "chi2_50",
+      "seed": 1237,
+      "oof_f1": 0.8901672102109833,
+      "fold_mean": 0.8901470215982638,
+      "fold_std": 0.005441726153619223,
+      "train_mean": 0.9982687682250523,
+      "gap": 0.10812174662678853
+    },
+    {
+      "name": "nbsvm",
+      "seed": 1237,
+      "oof_f1": 0.8940921896167898,
+      "fold_mean": 0.8940828262283013,
+      "fold_std": 0.006959618340155815,
+      "train_mean": 1.0,
+      "gap": 0.10591717377169885
+    },
+    {
+      "name": "ref007",
+      "seed": 2003,
+      "oof_f1": 0.8770813279449757,
+      "fold_mean": 0.8770777066862413,
+      "fold_std": 0.00595935449158203,
+      "train_mean": 0.9997526796878301,
+      "gap": 0.12267497300158903
+    },
+    {
+      "name": "joint_w05",
+      "seed": 2003,
+      "oof_f1": 0.8747832397742696,
+      "fold_mean": 0.8747810826287408,
+      "fold_std": 0.005037593363589365,
+      "train_mean": 0.9997032200100416,
+      "gap": 0.12492213738130091
+    },
+    {
+      "name": "joint_w15",
+      "seed": 2003,
+      "oof_f1": 0.8774477377126102,
+      "fold_mean": 0.8774471516553701,
+      "fold_std": 0.004505372639389254,
+      "train_mean": 0.9996043007181664,
+      "gap": 0.12215714906279629
+    },
+    {
+      "name": "connector_identity",
+      "seed": 2003,
+      "oof_f1": 0.8752629778868273,
+      "fold_mean": 0.8752621954973865,
+      "fold_std": 0.005445523501110262,
+      "train_mean": 0.9998516100270765,
+      "gap": 0.12458941452968993
+    },
+    {
+      "name": "chi2_50",
+      "seed": 2003,
+      "oof_f1": 0.8877658622943434,
+      "fold_mean": 0.8877653361561784,
+      "fold_std": 0.004296898446496231,
+      "train_mean": 0.998318261456657,
+      "gap": 0.11055292530047882
+    },
+    {
+      "name": "nbsvm",
+      "seed": 2003,
+      "oof_f1": 0.8914860551032309,
+      "fold_mean": 0.8914873217696347,
+      "fold_std": 0.0030665246621545197,
+      "train_mean": 1.0,
+      "gap": 0.10851267823036526
+    },
+    {
+      "name": "ref007",
+      "seed": 137,
+      "oof_f1": 0.8778223683005089,
+      "fold_mean": 0.877815945404543,
+      "fold_std": 0.0024609706648591875,
+      "train_mean": 0.9996042676936961,
+      "gap": 0.12178832228915308
+    },
+    {
+      "name": "chi2_50",
+      "seed": 137,
+      "oof_f1": 0.8850143931603528,
+      "fold_mean": 0.8850053921939459,
+      "fold_std": 0.003019505919354322,
+      "train_mean": 0.9979720205687747,
+      "gap": 0.1129666283748287
+    },
+    {
+      "name": "nbsvm",
+      "seed": 137,
+      "oof_f1": 0.8889920274199711,
+      "fold_mean": 0.8889789876509865,
+      "fold_std": 0.0021658242566717422,
+      "train_mean": 1.0,
+      "gap": 0.11102101234901363
+    }
+  ],
+  "reference_public007": 0.88888,
+  "public006": "aproximadamente0.87 según documento del auditor; no se aportó valor exacto/captura en este turno",
+  "public008": null,
+  "input_sha256": {
+    "data/train.csv": "ae6867261512451d67b7d18a9d6f37529cf1475bdf6c7407f5b01be82bc4c378",
+    "data/eval.csv": "c9aedcb94bc2a50c185fcd8b30b9853f061f234c9fe54f6befb3be8043f0217e",
+    "data/sample_submission.csv": "487528908bc0bb008a74aeabaa0faf994a450da89c13426783d47f692299110b"
+  },
+  "versions": {
+    "scikit-learn": "1.9.1",
+    "pandas": "3.0.6",
+    "numpy": "2.5.3",
+    "joblib": "1.6.0",
+    "matplotlib": "3.11.2",
+    "nbformat": "5.11.1",
+    "nbclient": "0.11.0",
+    "ipykernel": "7.4.0"
+  },
+  "local_test_reused": false,
+  "evaluation_type": "CV repetida usada para selección; no evaluación externa independiente",
+  "artifacts_sha256": {
+    "models/modelo_008.joblib": "60d8b233c1dd7c6ea828a32b8216116a5558ee5ada26844b44011fc57e47b1bc",
+    "submissions/submission_008.csv": "39863146032500fface58110e08137e25985376d349bc1821c0b0190c42db41b"
+  },
+  "csv_checks_passed": true,
+  "old_artifacts_unchanged": true,
+  "elapsed_seconds": 289.41856491700037,
+  "source_sha256": {
+    "src/experimento_008b.py": "2c600778222e2d296ae936bbd4985d75edf893c36df25e2fb18b21c2b14975cf",
+    "src/modelos_008b.py": "71774e20c9b62a8f63310156b6d498165168d99dd82980919d9d9481c93f5d91",
+    "src/features_007b.py": "32168dc3045b8b146e3260ddfb8b04c3153e1210ade017050ec2243fe7c3daa3",
+    "reports/particiones.csv": "d90cbd30a92a366298a66f2322df4869694798392f19b9c0978dbecac104a931"
+  }
+}

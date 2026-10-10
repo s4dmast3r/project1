@@ -1,0 +1,40 @@
+{
+  "seeds": [
+    271,
+    599,
+    913
+  ],
+  "folds_per_seed": 3,
+  "candidates": [
+    "ref005",
+    "global13",
+    "mid_bucket",
+    "edge_bigrams",
+    "thirds"
+  ],
+  "params": {
+    "ref005": {},
+    "global13": {
+      "global_max_ngram": 3
+    },
+    "mid_bucket": {
+      "mid_bucket": true
+    },
+    "edge_bigrams": {
+      "edge_bigrams": true
+    },
+    "thirds": {
+      "thirds": true
+    }
+  },
+  "metric": "f1_macro; labels explícitos; zero_division=0",
+  "selection": "Cada semilla: delta F1 OOF >=0.005 vs005 y ganar 3 folds o >=2 con menor brecha media. Debe cumplir las tres semillas. Luego no perder F1 OOF en semilla histórica137. Entre aprobados mayor F1 medio en semillas nuevas; empate exacto menor brecha.",
+  "historical_validation": "137 se usa como puerta de selección adicional, no prueba independiente.",
+  "data_scope": "9600 filas de desarrollo histórico. Prueba local antigua excluida de selección.",
+  "hypotheses": "Cambios estructurales del espacio de características no probados en 003-007: trigramas globales, bucket medio, bigramas de borde, tercios del texto completo.",
+  "clause_dominance_contrast": "FALLO: scorer de cláusulas con supervisión débil (etiqueta de la reseña) coincide con la etiqueta en 49,8% del desarrollo y 17,8% de los errores 005; descartada la agregación por cláusula para esta ronda.",
+  "excluded": "neg_scope/post_contraste/c1_min5 ya probados en 007 sin pasar; stacking 006 cayó en público; sin EM, sin reetiquetado, sin datos externos.",
+  "limitations": "Cambiar semillas no crea datos vírgenes. 271 ya se usó dentro de stacking006. Todos estos scores se usan para selección, no son evaluación externa independiente.",
+  "budget": "45 ajustes de screening; hasta 15 históricos condicionales; un ajuste final solo si aprobado",
+  "n_jobs": 1
+}

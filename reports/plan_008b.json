@@ -1,0 +1,22 @@
+{
+  "seeds": [
+    711,
+    1237,
+    2003
+  ],
+  "folds_per_seed": 3,
+  "candidates": [
+    "ref007",
+    "joint_w05",
+    "joint_w15",
+    "connector_identity",
+    "chi2_50",
+    "nbsvm"
+  ],
+  "metric": "F1 macro exclusivamente",
+  "gates": ">=7/9 folds ganados; delta medio OOF >=0.003; brecha media no mayor; no perder en137. No alterar después de ver resultados.",
+  "budget": "54 ajustes de screening y hasta18 históricos condicionales; sin nuevas rondas adaptativas",
+  "references": "reports/investigacion_008b.md",
+  "limitations": "CV repetida usada para selección. Semillas/datos ya explorados; ninguna prueba nueva.",
+  "hypotheses": "Ponderar tercios en el MISMO TFIDF; chi2 supervisado dentro del fold; conector identificado; NB-SVM multiclase adaptado."
+}

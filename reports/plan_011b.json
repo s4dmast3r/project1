@@ -1,0 +1,26 @@
+{
+  "date": "2026-10-09",
+  "primary_metric": "accuracy",
+  "secondary": "F1 macro",
+  "authorization": "Usuario confirmó accuracy principal y F1 macro control en este chat.",
+  "candidates": [
+    "ref010",
+    "binary_idf",
+    "binary_noidf",
+    "tf_noidf",
+    "connector_l1",
+    "logistic_l1"
+  ],
+  "seeds": [
+    8803,
+    9901,
+    11003
+  ],
+  "folds": 3,
+  "historical_seed": 137,
+  "gates": ">=7/9 folds accuracy; delta medio accuracy >=0.003; delta F1 medio >=0; brecha accuracy media no mayor; no perder accuracy ni F1 en137.",
+  "selection": "Mayor accuracy media entre elegibles; empate menor brecha. Sin rondas nuevas ni cambios de criterio después de observar.",
+  "budget": "54 ajustes de pipeline; hasta18 adicionales en137 si hay elegibles; un ajuste final si aprueba.",
+  "limitations": "Se reutilizan particiones de013 para comparación. Todos los scores son de selección sobre datos ya explorados; no prueba independiente.",
+  "sources": "reports/investigacion_011b.md"
+}

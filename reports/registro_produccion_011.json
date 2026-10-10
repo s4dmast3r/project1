@@ -1,0 +1,19 @@
+{
+  "base_model": "010 (LinearSVC L1 C=2 sobre características 007)",
+  "decision_rule": "argmax sobre [s_negativo+0.2, s_neutral, s_positivo+0.2] (descuento de neutral)",
+  "justification": "accuracy oficial; neutral es la clase menos frecuente; corrección de prior aprendida en desarrollo por CV anidada (d~0.2 estable).",
+  "local_evidence": "ganancia de accuracy ~+0.0007 media en semillas nuevas (12007/13001/14009), consistente.",
+  "n_changed_vs_010": 4,
+  "reference_public010": 0.89777,
+  "artifacts_sha256": {
+    "models/modelo_011.joblib": "e2043f864a213a6cb75579d56b6b6b7664ad8d3a0169212bb41a28f18524e6e3",
+    "submissions/submission_011.csv": "1722e996d8028c4cee47dfe1aad2f0864cfd7f393db5347d97c7f2311e6284d4"
+  },
+  "checks": {
+    "ids_order_schema_labels": true,
+    "roundtrip": true,
+    "reload": true
+  },
+  "elapsed_seconds": 24.653429250000045,
+  "honest_note": "Ganancia pequeña y dentro del ruido entre folds; no garantiza alcanzar 0.90 público."
+}

@@ -1,0 +1,15 @@
+{
+  "motivo": "thirds ganó 9/9 folds en 007b pero bajo el umbral +0.005 por semilla; se confirma en semillas nuevas con criterio fijado antes de ver resultados.",
+  "nuevas_semillas": [
+    1142,
+    2087,
+    3313
+  ],
+  "puertas": [
+    "ganar >=7 de 9 folds emparejados (thirds vs ref005)",
+    "delta medio F1 macro OOF >= 0.002",
+    "brecha media thirds <= brecha media ref005",
+    "no perder F1 OOF en semilla histórica 137"
+  ],
+  "nota": "Los scores de las semillas nuevas se usan para esta decisión pre-registrada; no son evaluación externa independiente."
+}

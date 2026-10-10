@@ -258,3 +258,269 @@ El asistente leyó las recomendaciones y revisó las carpetas src/ y reports/. N
 La primera comparación expuso un problema en el orden de la regla de selección heredada: se desempató antes de exigir mejora mínima. Se corrigió para filtrar primero requisitos y luego desempatar, se archivó la exploración y se reinició antes de obtener resultados externos. La función se comprobó con casos de métricas; no se generaron reseñas sintéticas de entrenamiento. Este cambio adaptativo se declara en reports/revision_recomendaciones_006.md.
 
 El protocolo de ejecución y comprobaciones está en reports/registro_006.json. Se mantuvo F1 macro como criterio, sin utilizar el score público para escoger parámetros. La prueba local original permanece excluida y el desarrollo histórico no es una prueba virgen. No se accedió a Kaggle. Revisión del estudiante y próximo envío manual: pendientes.
+
+## Implementación del plan007
+
+Prompt del usuario: «implementa el 007», adjuntando `reports/revision_006_y_plan_007.md`.
+
+El asistente implementó cuatro candidatos sobre005 y una evaluación agrupada repetida con semillas271/599/913. Se fijó interpretación conservadora del criterio: mejora≥0,005 en cada semilla y victorias de folds/brecha según el plan, más puerta histórica137 solo si aprueba lo anterior. Se desarrollaron características clásicas de negación de alcance de tres tokens y cláusulas posteriores a contraste; son canales adicionales, no reglas de etiqueta. No se reetiquetaron reseñas ni se añadieron datos externos.
+
+Se señaló que nuevas semillas no crean prueba virgen, que271 ya se había usado dentro del stacking y que una caída pública aproximada no demuestra su causa. El resultado ~0,87 de006 proviene del documento; no se verificó una nueva captura exacta. Código, tablas por fold, decisiones y verificaciones quedan en artefactos007. Los CSV anteriores se preservan. El estudiante debe revisar los resultados y decidir cualquier envío manual; no se accedió a Kaggle.
+
+Resultado de la ejecución007:36 ajustes completados, ningún candidato aprobado, notebook ejecutado sin errores. No se creó modelo ni CSV007; se preservó005 y se verificó la conservación de artefactos anteriores.
+
+## Versión 007: confirmación pre-registrada de tercios
+
+Prompt del usuario: «quiero que entiendas como se construyo la mejor version hasta
+ahora que fue la 005, para que puedas producir la version 007 que mejore el score
+que tiene actual mente esta que es de 0.88…». Adjuntó una explicación detallada de
+la 005 (representación, validación anidada, regla de selección, límites) y pidió no
+repetir ideas ya probadas (006 y la ronda 007 de negación/contraste/regularización).
+
+El asistente leyó la explicación, verificó la implementación real de 005 en
+`src/features_004.py` y `src/experimento_005.py`, contrastó primero la hipótesis de
+«cláusula dominante» (scorer de cláusulas con supervisión débil: solo 49,8 % de
+coincidencia con la etiqueta; 17,8 % en errores de 005 → descartada, y con ella la
+agregación por cláusula y el EM) y diseñó cuatro cambios estructurales del espacio de
+características: trigramas globales, bucket medio, bigramas de borde y tercios del
+texto completo. `src/features_007b.py` reproduce 005 con sus valores por defecto
+(verificado token a token y por vocabulario).
+
+La ronda 007b (semillas 271/599/913) mostró que trigramas globales, bucket medio y
+bigramas de borde empeoran, mientras `thirds` ganó 9/9 folds emparejados con media
++0,0028 y brecha menor, sin alcanzar el umbral +0,005 por semilla. Para no relajar un
+criterio tras ver resultados, se fijó antes una confirmación con puertas propias
+(≥7/9 folds, delta ≥0,002, brecha no peor, puerta 137) sobre semillas nuevas
+1142/2087/3313. Aprobada: 9/9 folds, +0,00328, brecha −0,00324 y 0,877822 vs
+0,873382 en 137. Se generaron `models/modelo_007.joblib` y
+`submissions/submission_007.csv`, verificados (esquema, orden, etiquetas, recarga,
+SHA-256) y preservando todos los artefactos previos.
+
+No se reetiquetaron ni eliminaron reseñas, no se usó eval para ajustar, no se
+consultó Kaggle y no se añadieron datos externos o sintéticos. La mejora local es
+pequeña aunque consistente (18/18 folds contando exploración y confirmación) y no
+garantiza el score público; el envío manual lo decide el estudiante.
+
+## Ronda 008: ponderación del bloque de tercios
+
+Prompt del usuario: «revisa esto y empieza», adjuntando
+`reports/revision_007_ideas_008.md` (revisión de la 007 enviada e hipótesis para la
+008).
+
+El asistente leyó el documento, verificó el estado (público 007 = 0.88888
+registrado), implementó el subconjunto rápido propuesto —referencia 007, control del
+split a peso 1.0 y pesos de tercios 0.5/1.5— y fijó antes de ejecutar el criterio de
+reemplazo (≥7/9 folds, Δ medio ≥0.003, brecha no peor y puerta 137) sobre semillas
+nuevas 711/1237/2003. Ninguna candidata aprobó: el control del split es peor que la
+007 (−0.0047) y el peso 1.5 empeora (−0.0133); el peso 0.5 es neutro. Se concluyó que
+la mejora de la 007 depende de la normalización/IDF conjunta del TF-IDF único y se
+conservó 007 sin generar submission_008. Las variantes suave y de identidad del
+conector no se introdujeron tras ver resultados, conforme a la advertencia del propio
+documento. No se reetiquetaron reseñas, no se usó eval para ajustar, no se accedió a
+Kaggle. La revisión del estudiante y el próximo envío manual quedan pendientes.
+
+## Solicitud y uso de IA, 8 de octubre de 2026
+
+Prompt del usuario: «quiero que implementes nuevas estrategias y consultes las diferentes websites o recursos para poder hacer que se mejore el 007. y que implementes estas ideas».
+
+El asistente investigó fuentes primarias, implementó, ejecutó y documentó las comparaciones; no añadió datos externos ni sintéticos ni consultó Kaggle.
+
+## Ronda 008b: investigación web y NB-SVM
+
+Se preservó la exploración 008 anterior y se ejecutaron cinco alternativas nuevas
+frente a la referencia 007: pesos de tercios en el mismo TF-IDF (0,5 y 1,5),
+identidad de conectores, selección chi² del 50 % y NB-SVM multiclase. Se consultaron
+el artículo de Wang y Manning (ACL 2012) y documentación oficial de scikit-learn;
+las fuentes y las adaptaciones están en `reports/investigacion_008b.md`.
+
+Ganó **nbsvm**. F1 macro OOF medio en las mismas tres particiones:
+007 **0.877286**, NB-SVM **0.892841**;
+9/9 folds favorables. Brecha media: 0.122364 → 0.107165.
+También superó la puerta histórica 137. Se creó `submissions/submission_008.csv`
+y `models/modelo_008.joblib`. Son resultados de selección sobre datos ya explorados,
+no estimaciones independientes ni garantía de 0,90 público. El entrenamiento de
+NB-SVM alcanza F1=1 y sigue existiendo riesgo de sobreajuste.
+
+Corrección de la interpretación de 008: separar vectorizadores no cambia el IDF de
+un rasgo común con igual frecuencia documental; sí altera la normalización por
+bloques. Aquella comparación no demostraba que cualquier ponderación fuera inútil.
+Las semillas 711/1237/2003 se reutilizan deliberadamente y no se consideran prueba
+nueva. El test local antiguo se excluyó de selección. Los transformadores, chi² y
+razones NB se aprenden dentro de cada entrenamiento. Eval solo se usa al exportar.
+
+Reproducción: `.venv/bin/python -m src.experimento_008b` (protege el registro
+existente). Informe: `.venv/bin/python -m src.informe_008b`.
+Consultar `reports/resumen_008b.md`, `reports/verificacion_008b.json` y el notebook
+ ejecutado `notebooks/08b_modelo_f1_macro.ipynb`. No se realizó envío a la plataforma.
+
+## Versión 009: regularización L1
+
+Prompt del usuario: «revisa el 008 y implementa estrategias diferentes para llegar
+al 0.90 y asegurarlo… consulta estrategias si es posible». Adjuntó el historial de
+la 005/007/008 y pidió producir la 009.
+
+El asistente revisó la ronda 008 (ponderación de tercios, sin ganadora y con el
+hallazgo de que la mejora de la 007 es de normalización conjunta), consultó
+estrategias metodológicas (NB-SVM, L1) por web y las declaró, e implementó tres
+candidatas distintas: LinearSVC L1 sobre las características 007, canal char_wb 2-6
+y NB-SVM uno-contra-resto sobre palabras. Fijó antes de ejecutar el criterio
+(≥7/9 folds, Δ≥0.003, brecha no peor, puerta 137) sobre semillas nuevas
+1009/2027/3053.
+
+Resultado: L1 gana 9/9 folds (+0.0239 de media, brecha −0.0656) y supera la puerta
+137 (0.89909 vs 0.87782); char_wb es neutro y NB-SVM empeora (−0.165). Se aprobó y
+generaron `models/modelo_009.joblib` y `submissions/submission_009.csv`, verificados
+(esquema, orden, etiquetas, recarga, SHA-256, convergencia, esparsidad 2,2 %). No se
+reenumeraron reseñas, no se usó eval para ajustar, no se accedió a Kaggle ni se
+añadieron datos externos. El asistente no garantiza 0.90: la métrica oficial no está
+verificada y el envío manual lo decide el estudiante, cuya revisión queda pendiente.
+
+## Rondas 010 y 011: confirmación del plateau de 009
+
+Prompt del usuario: «este modelo llegó a 0.89 pero necesito llegar al 0.90;
+implementa estrategias diferentes o las mismas modificadas». Público 009 = 0,89555.
+
+El asistente ejecutó tres investigaciones pre-registradas sobre semillas nuevas:
+(010) barrido de C en L1 con control L2 — C=1 óptimo y L2 C=1 retrocede, aislando la
+penalización L1; análisis de complementariedad 009 vs NB-SVM 008b — errores solapados
+68 % y voto por rangos peor (0.8897); (011) re-ensayo bajo L1 de rasgos que fallaron
+bajo L2 — trigramas globales, bigramas de borde, char_wb y min_df=2, todos neutros
+(±0.001). Además se comprobó la calibración de umbral sobre los scores L1 (+0.0016,
+ruido). Ninguna candidata superó las puertas; se conservó 009 sin generar envíos 010
+ni 011. El asistente declaró honestamente que 0.90 no es garantizable: el modelo está
+en un plateau (~0.90 OOF local / 0.89555 público) y los 0.00445 restantes no se
+alcanzan con las estrategias probadas sin arriesgar una caída pública. No se
+reetiquetaron reseñas, no se usó eval para ajustar ni se accedió a Kaggle. Revisión
+del estudiante y envío manual pendientes.
+
+## Diagnóstico de polaridad y ronda 012
+
+Prompt del usuario: «revisa todo, haz los diagnósticos de polaridad y revisa otros
+parámetros, implementa estrategias y hazme una versión 010 para enviar».
+
+El asistente ejecutó el diagnóstico de polaridad sobre la OOF de la 009 (errores
+pos↔neg con ~2x marcadores de negación/opinión y más contraste: reseñas mixtas),
+probó rasgos densos de sentimiento motivados por el diagnóstico (conteos de
+negación/contraste/cláusulas y léxico interno NB aprendido dentro del fold) con
+criterio pre-registrado en semillas nuevas 5501/6601/7703: neutros o peores. No se
+generó submission_010 porque ninguna candidata supera a la 009. El asistente declaró
+honestamente que la 009 es el techo de esta etapa y que no garantiza 0.90; además
+recordó que la métrica oficial nunca se verificó y pidió al usuario el texto de las
+reglas para confirmar o reorientar la optimización. No se reetiquetaron reseñas, no
+se usó eval para ajustar ni se accedió a Kaggle.
+
+## Versión 010: métrica oficial = accuracy
+
+Prompt del usuario: compartió las reglas — «las respuestas serán evaluadas usando
+accuracy; la clase neutral es algo menos frecuente».
+
+El asistente confirmó que la OOF en 137 de la 009 (accuracy 0.89500) coincide con el
+público 0.89555, verificando que la métrica es accuracy. Re-evaluó el C de la L1 bajo
+accuracy con criterio pre-registrado en semillas nuevas 8803/9901/11003: C=2 gana
+(+0.0034 accuracy media, 8/9 folds, puerta 137 0.89771); C=1.5 también pasa
+(+0.0033); C=3 es inconsistente; class_weight='balanced' empeora (0.89302). Se generó
+`submission_010.csv` (L1 C=2) verificada. Se declaró que la ganancia es pequeña, la
+brecha sube (0.06→0.089) y el 0.90 no está garantizado. No se reetiquetaron reseñas,
+no se usó eval para ajustar ni se accedió a Kaggle.
+
+Solicitud: «quiero que revises la entrega010, y que investigues y que saques la versión011 [...] para aumentar el desempeño». El asistente auditó, investigó, implementó y ejecutó una ronda acotada con criterios fijados antes de observar resultados.
+
+## Continuación011b, 9 de octubre de2026
+
+La captura del usuario confirma público010=0,89777. La entrega010 proviene del experimento013 (L1 C=2); los antiguos registros010/011 son rondas distintas sin aprobación. Se verificaron fuentes/modelo/CSV de010.
+
+El usuario confirmó en este chat: «Accuracy como principal y F1 macro como control». Se consultaron fuentes primarias de scikit-learn y COLING, y se implementaron cinco alternativas: binary_idf, binary_noidf, tf_noidf, connector_l1 y logistic_l1. Se reutilizan particiones8803/9901/11003 para comparación con010; no son datos nuevos. Todos los aprendizajes quedan dentro del fold. No se accedió a Kaggle ni se añadieron datos externos.
+
+| Modelo | Accuracy media | F1 macro medio | Brecha accuracy |
+|---|---:|---:|---:|
+| ref010 | 0.899062 | 0.903358 | 0.088976 |
+| binary_idf | 0.898611 | 0.902981 | 0.090000 |
+| connector_l1 | 0.898333 | 0.902623 | 0.090295 |
+| binary_noidf | 0.893403 | 0.897798 | 0.083611 |
+| tf_noidf | 0.893056 | 0.897346 | 0.080347 |
+| logistic_l1 | 0.892743 | 0.896763 | 0.065799 |
+
+Conservar010: ninguna candidata supera los criterios. No crear un envío equivalente ni bajar umbrales a posteriori.
+
+Los resultados son de selección adaptativa acumulada, no evaluación externa independiente. No se concluye un techo absoluto de rendimiento a partir de esta ronda ni se promete0,90 público. Se conservan los experimentos previos.
+
+Reproducción: `.venv/bin/python -m src.experimento_011b` (bloquea sobrescritura del registro existente), `.venv/bin/python -m src.verificar_011b` y `.venv/bin/python -m src.informe_011b`. Ver reports/resumen_011b.md, reports/investigacion_011b.md, reports/verificacion_011b.json y notebooks/11b_revision_y_modelo.ipynb.
+
+## Versión 011: descuento de neutral para accuracy
+
+Prompt del usuario: «sigue mejorando para llegar de 0.897 (010) a 0.90».
+
+El asistente revisó la ronda 011b (presencia binaria, TF sin IDF, conector L1 y
+logística L1: todas sin superar a 010) y, sobre el único margen restante, aplicó una
+corrección de prior a la regla de decisión: descuento de la clase neutral (d=0.2)
+seleccionado por validación anidada, cambiando 4 de 3000 predicciones. Declaró
+honestamente que la ganancia es mínima (+0.0007 local) y no garantiza 0.90; que la
+secuencia pública muestra rendimientos decrecientes y que 0.90 exige recursos fuera
+de las restricciones de la etapa. No se reetiquetaron reseñas, no se usó eval para
+ajustar ni se accedió a Kaggle.
+
+Solicitud del usuario: revisar submission011, investigar mejoras e iniciar012 para aumentar desempeño, seguida de «continue». El asistente auditó, investigó documentación oficial, implementó y evaluó alternativas sin datos externos, nuevas etiquetas ni acceso a Kaggle.
+
+## Continuación012b, 9 de octubre de2026
+
+La captura011 registra score0,89888. La entrega011 proviene de producir_011.py: mismos coeficientes que010 y ajuste de0,2 a los márgenes positivo/negativo; cambia4 predicciones. Se verificaron hashes y reproducción. La nueva referencia incorpora la regla completa en predict(). No se modifica el .joblib anterior, que guarda la base sin corrección.
+
+Se investigaron y ejecutaron especialistas binarios de polaridad C=1/C=2, clasificación por pares y calibración sigmoide con OOF interna agrupada. Accuracy principal, F1 macro control.45 ajustes externos de pipeline en8803/9901/11003, más comparación137 solo para elegibles. Los ajustes internos del calibrador incluyen vectorizador y clasificador. Datos de desarrollo ya explorados; no prueba nueva.
+
+El criterio se fijó antes de entrenar: delta accuracy>=0,001; al menos7/9 victorias; F1 medio no inferior; aumento de brecha<=0,005; no perder accuracy ni F1 en137. Es un criterio nuevo para esta ronda, distinto de011b, no una reclasificación retrospectiva de sus resultados.
+
+| Modelo | Accuracy media | F1 macro medio | Brecha accuracy |
+|---|---:|---:|---:|
+| ref011 | 0.900243 | 0.904792 | 0.088056 |
+| sigmoid | 0.900104 | 0.904595 | 0.088194 |
+| polarity_c2 | 0.897014 | 0.901720 | 0.088316 |
+| ovo_l1 | 0.895590 | 0.900167 | 0.089115 |
+| polarity_c1 | 0.895208 | 0.899998 | 0.057222 |
+
+Conservar011: ninguna candidata supera los criterios. No crear un envío equivalente ni bajar umbrales a posteriori.
+
+No se infiere un techo absoluto de ML clásico ni se promete0,90 público. Tampoco la frecuencia de neutral demuestra que el descuento anterior sea una corrección probabilística de prior. La documentación previa afirma selección anidada de ese descuento, pero sus tablas/código de semillas no se localizaron en esta revisión. Los resultados012b sí quedan guardados por fold y ejemplo.
+
+Reproducción: `.venv/bin/python -m src.experimento_012b` (protege registro y destinos existentes), `.venv/bin/python -m src.verificar_012b` y `.venv/bin/python -m src.informe_012b`. Ver reports/resumen_012b.md, reports/investigacion_012b.md, reports/verificacion_012b.json y notebooks/12b_revision_y_modelo.ipynb.
+
+## Cierre: ajuste fino de la regla de decisión (sin mejora sobre 011)
+
+Prompt del usuario: «mejora lo necesario para subir de 0.8988 (011) a 0.90».
+
+El asistente verificó que la ronda 012b (especialista de polaridad, one-vs-one,
+calibración sigmoide) no superó a 011 y, como último margen, afinó la regla de
+decisión de la 011 (descuento de neutral + asimetría pos/neg) por validación anidada
+en semillas nuevas 15001/16001/17003: el ajuste no mejora el descuento fijo d=0.2
+(la media anidada queda igual o peor). Se declaró que d=0.2 es óptimo y que no hay
+margen restante dentro de las restricciones; no se generó submission_012 porque sería
+ruido. No se reetiquetaron reseñas, no se usó eval para ajustar ni se accedió a Kaggle.
+
+## Ronda 014: interacciones no lineales (idea 1)
+
+Prompt del usuario: «revisa estas ideas e implementa la viable», proponiendo (1)
+interacciones no lineales polinómicas, (2) relaciones entre cláusulas, (3) agregación
+de cláusulas con etiqueta global y (4) diagnóstico de errores.
+
+El asistente evaluó las cuatro y ejecutó la (1), la única nueva y viable: SVM lineal
+sobre polinomio de grado 2 (interaction_only) construido sobre las 300/500
+características más discriminativas seleccionadas por L1 dentro de cada fold, contra la
+011, en semillas nuevas 16007/17011/18013. Resultado: ambas variantes empeoran accuracy
+y F1 en todas las semillas (Δ accuracy −0.005 a −0.012). Se conservó 011 y no se generó
+submission_012. Las ideas 2 y 3 se consideraron ya exploradas o restringidas
+(pseudo-etiquetado), y la 4 ya realizada en la ronda 012. No se reetiquetaron reseñas,
+no se usó eval para ajustar ni se accedió a Kaggle.
+
+## Ronda 015: ablación limpia (selección vs interacciones)
+
+Prompt del usuario: criticó la ronda 014 por confundir selección, interacciones, C y
+descuento, y pidió aislar cada efecto con C fijo en 2 y escala controlada.
+
+El asistente ejecutó el diagnóstico: ref011, sel500 (solo top-500), sel500_poly
+(top-500 + productos) y full_polyblock (completa + bloque de interacciones
+L2-normalizado), con argmax directo y descuento 0.2, en semillas 19001/20011/21013.
+Resultado: recortar a 500 rasgos explica casi toda la caída (0.8999→0.8947); los
+productos no aportan (sel500_poly≈sel500) y empeoran al añadirlos a la representación
+completa (0.8949<0.8999). Se corrigieron dos afirmaciones previas (agregación de
+cláusulas sin pseudo-etiquetado; los errores mixtos no son necesariamente
+irreducibles) y se añadió trazabilidad (source_sha256 y elapsed_seconds). Se conservó
+011. No se reetiquetaron reseñas, no se usó eval para ajustar ni se accedió a Kaggle.

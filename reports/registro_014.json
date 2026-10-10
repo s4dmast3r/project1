@@ -1,0 +1,129 @@
+{
+  "plan": {
+    "candidates": [
+      "ref011",
+      "poly_300",
+      "poly_500"
+    ],
+    "fresh_seeds": [
+      16007,
+      17011,
+      18013
+    ],
+    "historical_seed": 137,
+    "metric": "accuracy primaria; F1 macro control; brecha diagnóstico",
+    "gates": [
+      "ganar >=7/9 folds accuracy vs ref011",
+      "delta medio accuracy >= 0.001",
+      "delta F1 medio >= 0",
+      "aumento brecha accuracy media <= 0.005",
+      "no perder accuracy ni F1 en 137"
+    ],
+    "idea": "interacciones polinómicas grado 2 (interaction_only) sobre las k rasgos L1 más discriminativos; selección dentro de cada fold.",
+    "limitations": "Las semillas nuevas no crean datos vírgenes; selección acumulada sobre desarrollo. Interacciones pueden sobreajustar.",
+    "reference_public011": 0.89888
+  },
+  "seed_rows": [
+    {
+      "name": "poly_300",
+      "seed": 16007,
+      "ref011_acc": 0.8964583333333334,
+      "cand_acc": 0.8864583333333333,
+      "acc_delta": -0.010000000000000009,
+      "fold_wins": 0,
+      "gap_ref": 0.09265624999999995,
+      "gap_cand": 0.029427083333333326,
+      "gap_delta": -0.06322916666666663,
+      "f1_ref": 0.9012092425365189,
+      "f1_cand": 0.8905671782131392
+    },
+    {
+      "name": "poly_500",
+      "seed": 16007,
+      "ref011_acc": 0.8964583333333334,
+      "cand_acc": 0.8946875,
+      "acc_delta": -0.001770833333333388,
+      "fold_wins": 1,
+      "gap_ref": 0.09265624999999995,
+      "gap_cand": 0.04463541666666667,
+      "gap_delta": -0.04802083333333328,
+      "f1_ref": 0.9012092425365189,
+      "f1_cand": 0.8990039117253569
+    },
+    {
+      "name": "poly_300",
+      "seed": 17011,
+      "ref011_acc": 0.8988541666666666,
+      "cand_acc": 0.88375,
+      "acc_delta": -0.015104166666666585,
+      "fold_wins": 0,
+      "gap_ref": 0.08859374999999999,
+      "gap_cand": 0.034843749999999986,
+      "gap_delta": -0.05375,
+      "f1_ref": 0.903435416399282,
+      "f1_cand": 0.8882385535117966
+    },
+    {
+      "name": "poly_500",
+      "seed": 17011,
+      "ref011_acc": 0.8988541666666666,
+      "cand_acc": 0.8910416666666666,
+      "acc_delta": -0.0078125,
+      "fold_wins": 0,
+      "gap_ref": 0.08859374999999999,
+      "gap_cand": 0.04692708333333336,
+      "gap_delta": -0.04166666666666662,
+      "f1_ref": 0.903435416399282,
+      "f1_cand": 0.8955737157098914
+    },
+    {
+      "name": "poly_300",
+      "seed": 18013,
+      "ref011_acc": 0.8997916666666667,
+      "cand_acc": 0.8889583333333333,
+      "acc_delta": -0.010833333333333361,
+      "fold_wins": 0,
+      "gap_ref": 0.08885373360439482,
+      "gap_cand": 0.03062577093259204,
+      "gap_delta": -0.058227962671802774,
+      "f1_ref": 0.9043938516786354,
+      "f1_cand": 0.8930299627457616
+    },
+    {
+      "name": "poly_500",
+      "seed": 18013,
+      "ref011_acc": 0.8997916666666667,
+      "cand_acc": 0.8947916666666667,
+      "acc_delta": -0.0050000000000000044,
+      "fold_wins": 1,
+      "gap_ref": 0.08885373360439482,
+      "gap_cand": 0.043959063368542974,
+      "gap_delta": -0.04489467023585184,
+      "f1_ref": 0.9043938516786354,
+      "f1_cand": 0.899219221348304
+    }
+  ],
+  "checks": [
+    {
+      "name": "poly_300",
+      "fold_wins": 0,
+      "mean_acc_delta": -0.011979166666666652,
+      "mean_f1_delta": -0.01240093871457959,
+      "mean_gap_delta": -0.05840237644615647,
+      "passes_fresh": false
+    },
+    {
+      "name": "poly_500",
+      "fold_wins": 2,
+      "mean_acc_delta": -0.004861111111111131,
+      "mean_f1_delta": -0.005080553943628052,
+      "mean_gap_delta": -0.04486072341195058,
+      "passes_fresh": false
+    }
+  ],
+  "historical_137": {},
+  "winner": null,
+  "submission_created": false,
+  "reference_public011": 0.89888,
+  "decision": "Conservar011: las interacciones polinómicas de grado 2 empeoran accuracy y F1 en todas las semillas; ninguna candidata cumple las puertas pre-registradas. No generar submission_012."
+}
