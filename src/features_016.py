@@ -1,4 +1,12 @@
-"""Ronda 007b: variantes ESTRUCTURALES de la representación 005.
+"""Ronda 016: copia de features_007b con el parámetro `rules`.
+
+Es una copia (no una edición) para no romper la carga de los .joblib previos, que
+referencian src.features_007b. Con rules=False reproduce exactamente 007b.
+
+- rules: añade los tokens R: de src/rulefeat.py (última polaridad de cláusula ×
+  tipo de conector × si hay algo después). Se emiten una sola vez por reseña.
+
+Documentación original de 007b:
 
 Con todos los parámetros por defecto reproduce exactamente el analizador usado
 por la versión 005 (features_004.discourse_tokens con max_ngram=1, canal global

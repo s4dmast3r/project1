@@ -340,3 +340,33 @@ Conservar011: ninguna candidata supera los criterios. No crear un envío equival
 No se infiere un techo absoluto de ML clásico ni se promete0,90 público. Tampoco la frecuencia de neutral demuestra que el descuento anterior sea una corrección probabilística de prior. La documentación previa afirma selección anidada de ese descuento, pero sus tablas/código de semillas no se localizaron en esta revisión. Los resultados012b sí quedan guardados por fold y ejemplo.
 
 Reproducción: `.venv/bin/python -m src.experimento_012b` (protege registro y destinos existentes), `.venv/bin/python -m src.verificar_012b` y `.venv/bin/python -m src.informe_012b`. Ver reports/resumen_012b.md, reports/investigacion_012b.md, reports/verificacion_012b.json y notebooks/12b_revision_y_modelo.ipynb.
+
+## Corrida 14: tokens de regla discursiva (R:)
+
+Público confirmado: **0,90444** (011: 0,89888). Es la versión recomendada como envío final.
+
+La etiqueta depende de qué opinión va al final y con qué conector: tras un conector contrastivo la última opinión decide la etiqueta el 99,9 % de las veces; tras uno aditivo, solo el 52 %. La 011 no representaba esto explícitamente. Se añaden tres módulos:
+
+- `src/clausulas.py`: parte cada reseña en cláusulas con el conector que las introduce. No incluye «ahora», porque partiría mal frases como «por ahora».
+- `src/lex.py`: léxico semántico de polaridad. Se eliminaron las frases encontradas mirando etiquetas («una estrella», «queda muy corto», «nada mal», «mal», «corto», etc.) para evitar fuga de información. Orden de evaluación: frases negativas, frases positivas, palabras sueltas, de modo que «no volvería» no cuenta como «volvería».
+- `src/rulefeat.py`: emite una vez por reseña los tokens `R:` (última polaridad × tipo de conector × si hay algo después, más la secuencia de polaridades), para que el SVM aprenda una tasa por situación.
+
+`src/features_016.py` es una copia de `features_007b.py` con el parámetro `rules` (guardado en `self` para que `clone()` lo conserve). Es copia y no edición para no romper la carga de los `.joblib` anteriores. El modelo es la 011 con un único cambio: `TextFeatures007b(thirds=True, rules=True)`, con L1, C=2 y el descuento de neutral d=0,2 (5 predicciones). Con C=1, C=3 o tokens repetidos ×3 se obtuvo menos.
+
+**Corrección.** El commit 2d50ba1 tenía en `clausulas.py` el bucle de cláusulas dentro de `if first:`, de modo que se perdían las oraciones que empiezan con conector («Pero…», «Sin embargo…»), el 46 % de las reseñas. Con ese error las reglas no aportan nada; corregido, sí:
+
+| Protocolo 013, 3 folds | Accuracy media (8803/9901/11003) | Folds | Brecha | Semilla 137 |
+|---|---:|---:|---:|---:|
+| 011 sin reglas | 0.8991 | — | 0.089 | 0.8977 |
+| reglas, `clausulas.py` con error | 0.8989 | 5/9 | 0.089 | 0.9010 |
+| reglas, `clausulas.py` corregido | **0.9015** | 6 victorias, 1 empate, 2 derrotas | **0.080** | **0.9015** |
+
+La selección se hizo por CV antes de ver el público; el público lo confirma (unas 5 reseñas de 900, dentro del ruido de ±1 punto). Alrededor del 16 % del train parece tener etiqueta aleatoria, lo que pone el techo cerca de 0,91–0,92: no seguir ajustando hiperparámetros, descuentos ni umbrales contra el público, porque el privado (70 %) decide la nota.
+
+Reproducir desde la raíz (protege el registro existente):
+
+```bash
+.venv/bin/python -m src.producir_014
+```
+
+Artefactos: `models/modelo_014.joblib`, `submissions/submission_014.csv` (cambia 170 de 3000 frente a 011), `reports/registro_produccion_014.json`, `reports/ejecucion_produccion_014.log` y `reports/verificacion_014.log` (ambas CV). Para cargar el modelo se requieren `src/features_016.py`, `rulefeat.py`, `clausulas.py` y `lex.py`. Los artefactos «014» de `experimento_014` son una ronda anterior distinta. `producir_011.py` se restauró a su versión original para que la 011 siga siendo reproducible.

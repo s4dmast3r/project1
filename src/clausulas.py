@@ -24,8 +24,9 @@ def clauses(text):
         first = parts[0].strip(' ,:')
         if first:
             out.append(('', first))
-            for k in range(1, len(parts), 2):
-                body = parts[k + 1].strip(' ,:')
-                if body:
-                    out.append((parts[k].strip(), body))
+        # Fuera del if: una oración que empieza con conector ("Pero ...") conserva sus cláusulas.
+        for k in range(1, len(parts), 2):
+            body = parts[k + 1].strip(' ,:')
+            if body:
+                out.append((parts[k].strip(), body))
     return out

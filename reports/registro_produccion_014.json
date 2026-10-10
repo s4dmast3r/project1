@@ -1,0 +1,21 @@
+{
+  "base_model": "011 (LinearSVC L1 C=2 sobre características 007 + descuento de neutral)",
+  "change": "TextFeatures007b(thirds=True, rules=True) de features_016: tokens R: de regla discursiva",
+  "decision_rule": "argmax sobre [s_negativo+0.2, s_neutral, s_positivo+0.2] (descuento de neutral)",
+  "local_evidence": "semillas 8803/9901/11003: accuracy 0.8991 -> 0.9015, 6 victorias / 1 empate / 2 derrotas en 9 folds, brecha 0.089 -> 0.080; semilla 137: 0.8977 -> 0.9015. Ver reports/verificacion_014.log.",
+  "n_rule_features": 111,
+  "n_changed_by_discount": 5,
+  "n_changed_vs_011": 170,
+  "reference_public011": 0.89888,
+  "artifacts_sha256": {
+    "models/modelo_014.joblib": "173c916e406c494f53c36c24ac75a973db8b58b934914621388a0c0f1bed1641",
+    "submissions/submission_014.csv": "1a5e32ed8f3b73886616b0db29cde0017fb5f6bcfa5166f766e2a76e39a27ebc"
+  },
+  "checks": {
+    "ids_order_schema_labels": true,
+    "roundtrip": true,
+    "reload": true
+  },
+  "honest_note": "Con ~900 reseñas en el público el error estándar es ±1 punto; elegir el final por CV, no por el público.",
+  "elapsed_seconds": 54.80030629999965
+}
